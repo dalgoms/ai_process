@@ -114,4 +114,4 @@ AI 기반 웹사이트 구조 분석기 (Next.js).
 ## 연락처
 
 - GitHub: [github.com/dalgoms](https://github.com/dalgoms)
-- Email: seyoung@timbel.net
+- Email: seyoung67@timbel.net
