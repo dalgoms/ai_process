@@ -71,7 +71,7 @@ Cases actually applied to real work since 2026. The same approach applies to eve
 
 **WebScout — Service Structure Analysis Tool**
 An internal analysis tool for evaluating website architecture, detecting hidden pages, and mapping SEO content clusters. Used in practice to assess competitor structures and identify acquisition opportunities.
-Tech stack: Next.js / Vercel
+Tech stack: Next.js / TypeScript / Vercel — [webscout-next-8veo.vercel.app](https://webscout-next-8veo.vercel.app) · [github](https://github.com/dalgoms/webscout-next)
 
 **Automation Process Playbook**
 A project to design a centralized operational structure for workflow automation. Organized the flow from Notion task intake → GitHub Issue → code work → PR → CI → deployment, and built reusable operational documents and automation playbooks.
