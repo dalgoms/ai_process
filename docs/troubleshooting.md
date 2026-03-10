@@ -118,6 +118,11 @@ Issue에 `@codex` 코멘트를 달면 재실행됩니다.
 - 각 프로젝트 레포에 동일한 워크플로우 파일을 배포하세요
 - notion-sync의 NOTION_DB_ID를 공유하면 하나의 Inbox로 여러 프로젝트 관리 가능
 
+**Q: 멀티프로젝트 라우팅이 실패하거나 잘못된 레포로 가요**
+- Notion `Project` 값과 `config/projects.json`의 key는 공백/대소문자까지 정확히 일치해야 합니다
+- 매핑이 없으면 `notion-sync`가 해당 항목을 skip하고 Telegram 에러를 보냅니다 (Issue 미생성)
+- 새 프로젝트를 추가했다면 `config/projects.json` 수정 + PAT Repository access 추가 + Notion Project 옵션 추가를 함께 반영하세요
+
 **Q: auto-merge를 켜도 되나요?**
 - L3 단계에서는 수동 승인을 권장합니다
 - AI가 생성한 코드를 검토 없이 배포하면 위험할 수 있습니다
