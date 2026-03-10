@@ -222,3 +222,16 @@ CS팀이 Notion Work Inbox에 버그 등록
 - [ ] 콘텐츠 파이프라인 프롬프트 의료 도메인에 맞게 조정
 - [ ] 자동 응답 이메일 템플릿 작성
 - [ ] 테스트 리드 3건 전송 → 전체 흐름 검증
+
+---
+
+## Related Documents
+
+| 문서 | 내용 |
+|------|------|
+| [Healthcare Playbook](../playbooks/healthcare/README.md) | 플레이북 개요 및 목차 |
+| [Growth Loop](../playbooks/healthcare/growth-loop.md) | AARRR 기반 사용자 성장 루프 |
+| [Automation Architecture](../playbooks/healthcare/automation-architecture.md) | 자동화 기술 구조도 |
+| [Data Layer](../playbooks/healthcare/data-layer.md) | 데이터 구조 및 AI 활용 설계 |
+| [Leads DB Schema Template](../templates/notion-leads-db-schema.md) | Notion Leads DB 범용 스키마 |
+| [Make.com Scenario Template](../templates/make-scenario-template.md) | Make.com 시나리오 설계 템플릿 |
