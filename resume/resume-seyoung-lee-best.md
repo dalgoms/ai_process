@@ -14,7 +14,7 @@ Growth marketing lead with 8+ years of hands-on experience in acquisition, conve
 
 ## Core Competencies
 
-Analysis-Driven Planning & Design · Growth Marketing · AI Workflow Design · Marketing Automation (Notion / Make / GPT) · Website Operations (Wix Full-Stack) · Content & Lead Systems · Data-Driven Experimentation · Cross-functional Collaboration
+Analysis-Driven Planning & Design · Growth Marketing · AI Workflow Design · Marketing Automation (Notion / Make / GPT) · Business Website Operations (Wix: planning, build, CMS, DB, lead flow, customization) · Content & Lead Systems · Data-Driven Experimentation · Cross-functional Collaboration
 
 ---
 
@@ -27,7 +27,7 @@ Analysis-Driven Planning & Design · Growth Marketing · AI Workflow Design · M
 Led growth marketing and brand communications for a voice-data technology company (~15 employees), owning the full marketing function from strategy to execution.
 
 - Planned and executed B2C performance marketing campaigns across Meta, Google, and Naver; managed annual ad budgets of KRW 800M–1.4B
-- Built and operated company websites end-to-end on Wix (domain purchase, hosting, DB management, custom development); designed landing page UX and conversion flows from scratch
+- Independently planned, built, and operated business websites on Wix — handling domain setup, site architecture, CMS/database operations, inquiry form and lead capture flow design, and custom development for business needs; designed landing page UX and conversion flows from scratch
 - Built SEO-driven content strategy and lead acquisition funnels based on site structure analysis
 - Coordinated across product, design, and sales teams to align service messaging, campaign timing, and launch operations
 - Introduced AI-powered marketing automation: built Notion + Make + GPT pipelines for content research, lead management, and multi-channel alerting
@@ -53,9 +53,9 @@ Participated in the planning and launch of an AI-powered meeting transcription s
 
 ---
 
-## Selected Practical AI Initiatives
+## Analysis-Driven Planning + AI Execution Initiatives
 
-Work samples prepared as initial analysis, operational hypotheses, and execution frameworks — structured for real business application, not as portfolio showcases.
+Each initiative follows the same approach: analysis-driven planning first, then AI-automated execution. Structured for real business application, not as portfolio showcases.
 
 **Healthcare Retention Analysis (AI 건강이)**
 Prepared a pre-engagement business analysis for the healthcare app domain. Crawled and analyzed 20,000 pages of a competing service to identify structural retention gaps. Organized initial hypotheses around AI-driven daily health notifications, chatbot engagement, and a morning/evening health loop. Designed a Braze CRM integration scenario and user flow framework as an execution-ready starting point.
@@ -76,16 +76,16 @@ Operational system currently in production. Connects lead capture (web form → 
 **AI:** GPT, Claude, Cursor
 **Automation:** Make, Notion API, GitHub Actions
 **Development:** Next.js, Node.js, Vercel, TypeScript
-**Web Platform:** Wix (domain, hosting, DB, full customization)
+**Web Platform:** Wix (domain management, site planning & build, CMS/DB operations, form/lead flow, customization)
 **Design:** Figma
 
 ---
 
 ## Working Style
 
-- Structure problems into executable plans and initial analysis before starting work
-- Use AI tools to accelerate research, framing, and early-stage operational planning
-- Prefer working prototypes and practical frameworks over decorative outputs
+- Analyze first, then automate: structure problems into actionable plans before building
+- Use AI tools to accelerate research, framing, and operational planning — then systematize with automation
+- Operate independently across the full stack: from website planning and build to workflow integration and optimization
 
 ---
 
