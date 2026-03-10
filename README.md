@@ -49,6 +49,33 @@ app/analyze/page.tsx에서 "분석 시작" 버튼의 텍스트를 "Start Analysi
 - **before/after**를 설명하세요
 - **한 번에 하나의 작업**만 요청하세요
 
+## 실행 방법 (어디서든)
+
+### 방법 1: Notion (모바일/PC)
+
+Work Inbox에 새 행 추가 → 5분 내 자동 실행
+
+### 방법 2: Cursor에서 대화로
+
+아래처럼 말하면 됩니다:
+
+```
+Notion에 등록해줘: [제목], [변경사항], [파일 경로]
+```
+
+예시:
+- "Notion에 등록해줘: 메인 페이지 배경색 변경, app/page.tsx에서 bg-white를 bg-gray-50으로"
+- "Notion에 등록해줘: 분석 결과 다운로드 버튼 추가, app/analyze/page.tsx"
+- "Notion에 등록해줘: footer 링크 수정, app/layout.tsx에서 GitHub 링크를 https://github.com/dalgoms로 변경"
+
+### 방법 3: GitHub Issue 직접 생성
+
+Issue를 만들 때 `ai-task` 라벨만 붙이면 Codex가 자동 실행
+
+### 방법 4: 재시도
+
+Issue에 `@codex` 코멘트를 달면 다시 실행
+
 ## Connected Services
 
 | 서비스 | 역할 |
