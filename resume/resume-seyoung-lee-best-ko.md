@@ -2,7 +2,7 @@
 
 Growth Marketing Lead / Automation & Web Operations
 
-1989.06.07 · 010-4828-4737 · seyoung8967@gmail.com · [GitHub](https://github.com/dalgoms) · [LinkedIn](https://linkedin.com/in/)
+1989.06.07 · 010-4828-4737 · seyoung8967@gmail.com · [GitHub](https://github.com/dalgoms) · [LinkedIn](https://www.linkedin.com/in/seyounglees/)
 
 ---
 
