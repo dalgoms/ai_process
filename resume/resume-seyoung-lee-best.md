@@ -65,9 +65,9 @@ Participated in the planning and launch of an AI-powered meeting transcription s
 
 ---
 
-## Practical Application Cases
+## Practical Application Cases (2026~)
 
-The same approach applies to every project: first analyze business structure and user flow, then design actionable operational methods and automation architecture. The focus is on preparing initial analysis and execution frameworks that connect directly to real work — not showcase portfolios.
+Cases actually applied to real work since 2026. The same approach applies to every project: first analyze business structure and user flow, then design actionable operational methods and automation architecture. The focus is on preparing initial analysis and execution frameworks that connect directly to real work — not showcase portfolios.
 
 **WebScout — Service Structure Analysis Tool**
 An internal analysis tool for evaluating website architecture, detecting hidden pages, and mapping SEO content clusters. Used in practice to assess competitor structures and identify acquisition opportunities.
@@ -79,6 +79,9 @@ Link: [github.com/dalgoms/ai_process](https://github.com/dalgoms/ai_process)
 
 **Business Automation System**
 An operational system currently in production. Includes lead capture (inquiry form → Make → Notion CRM → Telegram/Email), schedule-based follow-up automation, content draft assistance, and multi-channel notification integration across Telegram, Email, Slack, KakaoTalk, and SMS.
+
+**Alert Automation (Google/Naver)**
+An automated monitoring structure using Google Alerts and Naver keyword alerts for industry, competitor, and keyword tracking. Collected alerts are automatically organized into Notion DB via Make, with real-time notifications sent to Telegram/Slack when significant changes are detected. Automated the early detection layer of marketing research and competitive analysis to improve response speed.
 
 ---
 
