@@ -54,6 +54,12 @@ Participated in the planning and launch of an AI-powered meeting transcription s
 
 ---
 
+## Education
+
+Ajou University — B.A. in Media Studies
+
+---
+
 ## Key Achievements
 
 - Grew B2C product revenue from KRW 5.2B (2023) to KRW 7.2B (2024), achieving 650% ROAS
@@ -104,6 +110,3 @@ An automated monitoring structure using Google Alerts and Naver keyword alerts f
 - Automate repetitive work and systematize into formats teams can use immediately
 - Operate independently from website planning and build through workflow integration and optimization
 
----
-
-Ajou University — B.A. in Media Studies
