@@ -7,9 +7,12 @@
 - Notion Content Pipeline DB 생성 (마케팅 콘텐츠 관리)
 - Notion Proposals DB 생성 (B2B 제안서 관리)
 - Vercel 웹훅 엔드포인트 추가 (`/api/webhook/contact`, `/api/webhook/inquiry`)
-- Make.com 시나리오 설계 문서 작성 (리드 캡처, 팔로업, 콘텐츠 파이프라인)
+- Make.com 시나리오 1 (리드 캡처) 라이브 배포: Webhook → Notion Leads → Telegram
+- Make.com 시나리오 2, 3 설계 완료 (팔로업 리마인더, 콘텐츠 파이프라인)
+- `/contact` 문의 페이지 생성 + 헤더 네비게이션 링크 추가
+- Vercel 환경변수 `MAKE_CONTACT_WEBHOOK_URL` 등록
 - Notion에 Make.com 연동 가이드 페이지 생성
-- Work Inbox의 Project 셀렉트에 `ai_process` 옵션 추가
+- 전체 문서 업데이트 (architecture, workflows, setup-guide, troubleshooting)
 
 ---
 

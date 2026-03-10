@@ -133,15 +133,56 @@ Work Inbox 페이지 → 우측 상단 `...` → Connections → 만든 Integrat
 3. Deploy → 도메인 확인
 4. `deploy-notify.yml`에서 SITE_URL 수정
 
-## 7. 검증 체크리스트
+## 7. Make.com 비즈니스 자동화 설정
+
+### 7-1. Make.com 서비스 연결
+
+1. Make.com 로그인 → Connections
+2. **Notion** 추가: OAuth 인증으로 워크스페이스 연결
+3. **Telegram Bot** 추가: Bot Token 입력
+4. **OpenAI** 추가: API Key 입력 (콘텐츠 파이프라인용)
+
+### 7-2. 웹훅 엔드포인트 배포
+
+`webscout-next/app/api/webhook/` 에 아래 파일이 필요:
+- `contact/route.ts` - 문의폼 데이터 → Make.com 전달
+- `inquiry/route.ts` - 고객 문의 → Make.com 전달
+
+### 7-3. Make.com 시나리오 생성
+
+1. **리드 캡처**: Webhook → Notion Leads DB → Telegram
+2. **팔로업 리마인더**: Schedule (08:00) → Notion Search → Telegram
+3. **콘텐츠 파이프라인**: Notion Watch → OpenAI → Notion Update → Telegram
+
+상세 설정: [make-scenarios.md](./make-scenarios.md)
+
+### 7-4. Vercel 환경변수 등록
+
+```
+MAKE_CONTACT_WEBHOOK_URL=https://hook.eu1.make.com/xxxxx
+MAKE_INQUIRY_WEBHOOK_URL=https://hook.eu1.make.com/yyyyy
+```
+
+Vercel Dashboard → Settings → Environment Variables에서 등록 후 Redeploy
+
+### 7-5. 문의폼 페이지
+
+`webscout-next/app/contact/page.tsx` — 웹사이트 문의폼
+- 제출 시 `/api/webhook/contact`로 POST
+- Make.com을 거쳐 Notion Leads DB 저장 + Telegram 알림
+
+## 8. 검증 체크리스트
 
 - [ ] `gh secret list`로 4개 시크릿 확인
 - [ ] Notion Work Inbox에 테스트 항목 등록
 - [ ] `gh workflow run "Notion to GitHub Issue Sync"`로 수동 트리거
 - [ ] Issue 생성 → Codex 실행 → PR 생성 확인
 - [ ] PR 머지 → Vercel 배포 → Telegram 알림 확인
+- [ ] `/contact` 페이지에서 문의 제출 → Notion Leads DB 저장 확인
+- [ ] Telegram에 리드 알림 수신 확인
+- [ ] Make.com 시나리오 3개 활성화 상태 확인
 
-## 8. 새 PC에서 동일 환경 구축
+## 9. 새 PC에서 동일 환경 구축
 
 ```bash
 # 도구 설치

@@ -164,6 +164,49 @@ GitHub에서 `build` job이 required check로 설정되어 있어, CI 실패 시
 
 ---
 
+## 6. Make.com 시나리오 (비즈니스 자동화)
+
+코드 파이프라인과 별도로 Make.com이 비즈니스 자동화를 처리합니다.
+
+### 전체 흐름
+
+```
+웹사이트 /contact 폼
+    → /api/webhook/contact (Vercel)
+    → Make.com Webhook
+    → Notion Leads DB 저장
+    → Telegram 알림
+```
+
+### 시나리오 1: 리드 캡처 (라이브)
+
+| 항목 | 값 |
+|------|-----|
+| 트리거 | Custom Webhook (Vercel에서 POST) |
+| 모듈 | Webhook → Notion Create Item → Telegram Send Message |
+| 자동화 | 완전 자동 |
+| 환경변수 | `MAKE_CONTACT_WEBHOOK_URL` (Vercel) |
+
+### 시나리오 2: 팔로업 리마인더 (설계 완료)
+
+| 항목 | 값 |
+|------|-----|
+| 트리거 | Schedule (매일 08:00) |
+| 모듈 | Schedule → Notion Search → Iterator → Telegram |
+| 필터 | Follow-up Date = 오늘, Status != won/lost |
+
+### 시나리오 3: 콘텐츠 파이프라인 (설계 완료)
+
+| 항목 | 값 |
+|------|-----|
+| 트리거 | Notion Watch (Content Pipeline, Status=idea) |
+| 모듈 | Notion Watch → OpenAI Completion → Notion Update → Telegram |
+| 자동화 | AI 생성 → 사람 승인 |
+
+상세 설정은 [make-scenarios.md](./make-scenarios.md) 참조
+
+---
+
 ## GITHUB_TOKEN 제한 사항
 
 GitHub Actions의 `GITHUB_TOKEN`으로 생성된 이벤트(Issue, Comment 등)는 다른 워크플로우를 트리거하지 않습니다. 이 보안 정책 때문에:

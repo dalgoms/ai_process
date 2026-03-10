@@ -103,6 +103,39 @@ Issue에 `@codex` 코멘트를 달면 재실행됩니다.
 @codex 다시 실행해주세요. 이번에는 app/layout.tsx의 footer만 수정해주세요.
 ```
 
+### 9. /contact 폼에서 제출했는데 Notion에 안 들어와요
+
+**원인 1: Vercel 환경변수 미등록**
+- Vercel Dashboard → Settings → Environment Variables에서 `MAKE_CONTACT_WEBHOOK_URL`이 등록되어 있는지 확인
+- 등록 후 반드시 **Redeploy** 해야 적용됩니다
+
+**원인 2: Make.com 시나리오가 꺼져있음**
+- Make.com 시나리오 편집 → 좌하단 토글이 **ON** 상태인지 확인
+- "Run once"는 1회만 실행됩니다. 상시 운영은 토글 ON이 필요합니다
+
+**원인 3: Notion Leads DB Integration 연결 안 됨**
+- Leads DB 페이지 → `...` → Connections에서 Make.com의 Notion 연결이 DB에 접근할 수 있는지 확인
+
+### 10. Make.com webhook에 데이터 구조가 안 떠요
+
+**해결: 수동 데이터 구조 등록**
+1. Webhook 모듈 클릭 → Data structure → Add
+2. Generator 클릭 → Content type: JSON
+3. Sample data 붙여넣기:
+```json
+{"name":"Test","email":"test@test.com","phone":"010-0000-0000","company":"Test Corp","message":"test","source":"website","type":"b2b"}
+```
+4. Save
+
+또는 "Run once" 클릭 → 대기 중일 때 테스트 데이터 전송
+
+### 11. Telegram 메시지에 null이 표시돼요
+
+**원인: Make.com 변수 직접 타이핑**
+- `{{1.name}}` 같은 변수를 직접 타이핑하면 안 됩니다
+- 반드시 오른쪽 **매핑 패널에서 클릭**해서 삽입해야 합니다
+- Make.com이 내부적으로 변수 ID를 다르게 처리합니다
+
 ---
 
 ## FAQ
@@ -115,8 +148,14 @@ Issue에 `@codex` 코멘트를 달면 재실행됩니다.
 
 **Q: 여러 프로젝트에 적용할 수 있나요?**
 - Notion DB의 Project 필드로 프로젝트를 구분합니다
+- `config/projects.json`에 항목만 추가하면 자동 라우팅됩니다
 - 각 프로젝트 레포에 동일한 워크플로우 파일을 배포하세요
-- notion-sync의 NOTION_DB_ID를 공유하면 하나의 Inbox로 여러 프로젝트 관리 가능
+
+**Q: Make.com 무료 플랜으로 충분한가요?**
+- Free 플랜: 월 1,000 operations
+- 리드 캡처 1건 = 약 3 operations (Webhook + Notion + Telegram)
+- 월 300건 리드까지 무료로 처리 가능
+- 팔로업 리마인더 추가 시 매일 약 5-10 operations 소모
 
 **Q: auto-merge를 켜도 되나요?**
 - L3 단계에서는 수동 승인을 권장합니다

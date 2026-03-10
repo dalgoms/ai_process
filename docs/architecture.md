@@ -87,6 +87,56 @@
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
+## Business Automation Layer
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                   BUSINESS AUTOMATION LAYER                         │
+│                                                                     │
+│  ┌──────────────┐     ┌──────────────┐     ┌──────────────────┐   │
+│  │ /contact 폼  │     │ /api/webhook │     │   Make.com       │   │
+│  │ (webscout)   │────▶│ /contact     │────▶│   시나리오       │   │
+│  │              │     │ /inquiry     │     │                  │   │
+│  └──────────────┘     └──────────────┘     └───────┬──────────┘   │
+│                                                     │              │
+│                    ┌────────────────────────────────┼──────┐       │
+│                    ▼                ▼               ▼      │       │
+│              ┌──────────┐   ┌──────────┐   ┌──────────┐   │       │
+│              │ Leads DB │   │ Content  │   │Proposals │   │       │
+│              │ (CRM)    │   │ Pipeline │   │   DB     │   │       │
+│              └──────────┘   └──────────┘   └──────────┘   │       │
+│                    │                                       │       │
+│                    ▼                                       ▼       │
+│              ┌──────────┐                          ┌──────────┐   │
+│              │ Telegram │                          │  OpenAI  │   │
+│              │ 알림     │                          │ 초안생성 │   │
+│              └──────────┘                          └──────────┘   │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+### Make.com 시나리오
+
+| 시나리오 | 트리거 | 동작 | 자동화 레벨 |
+|---------|--------|------|------------|
+| 리드 캡처 | Webhook (문의폼) | Notion Leads 저장 + Telegram 알림 | 완전 자동 |
+| 팔로업 리마인더 | 매일 08:00 | Follow-up Date = 오늘인 리드 알림 | 완전 자동 |
+| 콘텐츠 파이프라인 | Content DB Status=idea | AI 초안 생성 → 검토 요청 | AI+사람 승인 |
+
+### Notion 비즈니스 DB
+
+| DB | 용도 | Data Source ID |
+|----|------|----------------|
+| Leads | B2B+B2C 리드 CRM | b398c377-2698-4624-9b00-2a1926f9c790 |
+| Content Pipeline | 마케팅 콘텐츠 관리 | 4be97f57-aec9-47bd-b616-105f4bcd3c96 |
+| Proposals | B2B 제안서 (Leads relation) | 7371c260-62c2-46bd-92bc-8e957abbb80d |
+
+### Vercel 웹훅 엔드포인트
+
+| 엔드포인트 | 환경변수 | 용도 |
+|-----------|---------|------|
+| `/api/webhook/contact` | `MAKE_CONTACT_WEBHOOK_URL` | 문의폼 → Make.com |
+| `/api/webhook/inquiry` | `MAKE_INQUIRY_WEBHOOK_URL` | 고객문의 → Make.com |
+
 ## Data Flow
 
 ```
@@ -154,6 +204,9 @@
 | Version Control | Git + GitHub |
 | Framework | Next.js |
 | Remote Access | AnyDesk |
+| Business Automation | Make.com |
+| CRM | Notion Leads DB |
+| Webhook | Next.js API Routes (Vercel) |
 
 ## Secrets
 
