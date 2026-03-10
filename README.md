@@ -145,6 +145,18 @@ Issue에 `@codex` 코멘트를 달면 다시 실행
 6. `.codex-context` 파일 생성 (프로젝트 설명)
 7. Notion Work Inbox의 Project 셀렉트에 새 이름 추가
 
+## 비즈니스 자동화
+
+코드 파이프라인 외에 마케팅/세일즈 자동화도 운영합니다.
+
+| Notion DB | 용도 | Make.com 연동 |
+|-----------|------|--------------|
+| [Leads](https://www.notion.so/49f20ec826ed41ff9f5cc137af122ed3) | B2B+B2C 리드 CRM | 리드 캡처, 팔로업 리마인더 |
+| [Content Pipeline](https://www.notion.so/69a39bc304664c658ec1b1fb7117c100) | 마케팅 콘텐츠 관리 | AI 초안 생성 |
+| [Proposals](https://www.notion.so/3e86d8a31dfd4fc5829a6ed4482b3708) | B2B 제안서 관리 | (향후) |
+
+웹훅 엔드포인트: `/api/webhook/contact`, `/api/webhook/inquiry`
+
 ## Connected Services
 
 | 서비스 | 역할 |
@@ -154,6 +166,7 @@ Issue에 `@codex` 코멘트를 달면 다시 실행
 | [ai_process](https://github.com/dalgoms/ai_process) | 중앙 오케스트레이터 + 문서 |
 | [Vercel](https://webscout-next-8veo.vercel.app) | 배포 |
 | Telegram (@seyounginboxbot) | 알림 |
+| Make.com | 비즈니스 자동화 (리드, 콘텐츠, 팔로업) |
 
 ## 상세 문서
 
@@ -162,5 +175,6 @@ Issue에 `@codex` 코멘트를 달면 다시 실행
 | [Architecture](docs/architecture.md) | 시스템 구성도, 데이터 흐름, 기술 스택, DB 스키마 |
 | [Setup Guide](docs/setup-guide.md) | 처음부터 전체 파이프라인 구축하는 방법 |
 | [Workflows](docs/workflows.md) | 각 GitHub Actions 워크플로우 상세 동작 |
+| [Make.com Scenarios](docs/make-scenarios.md) | Make.com 시나리오 설정 가이드 (리드, 팔로업, 콘텐츠) |
 | [Troubleshooting](docs/troubleshooting.md) | 자주 발생하는 문제 해결 + FAQ |
 | [Changelog](docs/changelog.md) | 구축 이력, 해결한 버그, 참조 링크 |

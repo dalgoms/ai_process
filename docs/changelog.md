@@ -1,5 +1,18 @@
 # Changelog - 구축 이력
 
+## 2026-03-10 (Business Automation)
+
+### Phase 5: 비즈니스 자동화 기반
+- Notion Leads DB 생성 (B2B+B2C CRM, Proposals relation 연결)
+- Notion Content Pipeline DB 생성 (마케팅 콘텐츠 관리)
+- Notion Proposals DB 생성 (B2B 제안서 관리)
+- Vercel 웹훅 엔드포인트 추가 (`/api/webhook/contact`, `/api/webhook/inquiry`)
+- Make.com 시나리오 설계 문서 작성 (리드 캡처, 팔로업, 콘텐츠 파이프라인)
+- Notion에 Make.com 연동 가이드 페이지 생성
+- Work Inbox의 Project 셀렉트에 `ai_process` 옵션 추가
+
+---
+
 ## 2026-03-10 (Multi-Project Upgrade)
 
 ### Phase 4: 멀티 프로젝트 확장
