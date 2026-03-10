@@ -2,7 +2,7 @@
 
 Growth Marketing Lead / Automation & Web Operations
 
-1989.06.07 · 010-4828-4737 · seyoung8967@gmail.com · [GitHub](https://github.com/dalgoms) · [LinkedIn](https://www.linkedin.com/in/seyounglees/)
+010-4828-4737 · seyoung8967@gmail.com · [GitHub](https://github.com/dalgoms) · [LinkedIn](https://www.linkedin.com/in/seyounglees/)
 
 ---
 
@@ -35,15 +35,12 @@ Led the full scope of marketing strategy, execution, website operations, and aut
 - Coordinated across product, design, and sales teams to align service messaging, campaign timing, and launch operations
 - Stabilized B2C acquisition infrastructure by 2025 and established the operational foundation for B2B expansion
 
-#### Internal AI Initiatives (2026~)
-
-AI-driven initiatives requested internally and rapidly applied to real operations.
-
-- **WebScout** — Competitor website structure analysis tool. Automated site architecture analysis from days to hours — [live](https://webscout-next-8veo.vercel.app) · [github](https://github.com/dalgoms/webscout-next)
-- **MEFIMAKE** — Meta ad creative generator. Reduced creative production time from hours to minutes; established monthly batch production workflow — [live](https://mefimake.vercel.app) · [github](https://github.com/dalgoms/public/tree/main/Mefimake)
-- **Business Automation System** — End-to-end lead capture→CRM→alerting→follow-up automation. Shifted initial lead response from hours to real-time automated alerts
-- **Automation Process Playbook** — Built Notion→GitHub Issue→PR→CI→Deploy automation structure and reusable playbooks — [github](https://github.com/dalgoms/ai_process)
-- **Alert Automation (Google/Naver)** — Shifted competitor and keyword monitoring from manual to fully automated. Real-time detection and Telegram/Slack alerting
+- Designed and built AI-powered internal tools on request, deployed to production immediately (2026~)
+- **WebScout** — Competitor site structure analysis automation, days→hours — [live](https://webscout-next-8veo.vercel.app) · [github](https://github.com/dalgoms/webscout-next)
+- **MEFIMAKE** — Meta ad creative generator, production time hours→minutes — [live](https://mefimake.vercel.app) · [github](https://github.com/dalgoms/public/tree/main/Mefimake)
+- **Business Automation System** — End-to-end lead capture→CRM→alerting→follow-up, real-time response
+- **Automation Process Playbook** — Notion→GitHub Issue→PR→CI→Deploy automation and reusable playbooks — [github](https://github.com/dalgoms/ai_process)
+- **Alert Automation (Google/Naver)** — Fully automated competitor/keyword monitoring, real-time Telegram/Slack alerting
 
 ### AI Service Co-Development — SK hynix · SK Telecom (Internal B2B Project)
 
@@ -58,18 +55,17 @@ Participated in the planning and launch of an AI-powered meeting transcription s
 
 ---
 
-## Education
+## Skills
 
-Ajou University — B.A. in Media Studies
+**AI:** GPT, Claude, Cursor
+**Automation/Ops:** Make, Notion API, GitHub Actions
+**Web/Dev:** Wix, Next.js, Node.js, Vercel, TypeScript
+**Design/Content:** Figma, Adobe Photoshop, Illustrator, Premiere Pro
 
 ---
 
-## Skills
+## Education
 
-**AI:** GPT, Claude, Cursor, Google NotebookLM, GenSpark
-**Automation/Ops:** Make, Notion API, GitHub Actions
-**Web/Dev:** Wix, Next.js, Node.js, Vercel, TypeScript
-**Design:** Figma, Adobe Photoshop, Adobe Illustrator, Midjourney, NanoBanana
-**Content/Video:** Adobe Premiere Pro, After Effects, Suno
+Ajou University — B.A. in Media Studies
 
 
