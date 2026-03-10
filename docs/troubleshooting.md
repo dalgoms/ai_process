@@ -118,6 +118,12 @@ Issue에 `@codex` 코멘트를 달면 재실행됩니다.
 - 각 프로젝트 레포에 동일한 워크플로우 파일을 배포하세요
 - notion-sync의 NOTION_DB_ID를 공유하면 하나의 Inbox로 여러 프로젝트 관리 가능
 
+**Q: 멀티프로젝트 라우팅이 안 되고 Unknown project 경고가 떠요**
+- `Project` 값이 `config/projects.json`의 key와 **완전히 동일한지** 확인하세요 (대소문자/공백 포함)
+- Notion의 `Project` 속성은 Select 타입으로 유지하고, 올바른 옵션을 선택했는지 확인하세요
+- 매핑이 없으면 해당 작업은 Issue 생성 없이 건너뛰고, Telegram에 `[SYNC ERROR] Unknown project` 알림이 전송됩니다
+- 새 프로젝트라면 `config/projects.json`에 프로젝트 key와 `repo`를 추가한 뒤 다시 실행하세요
+
 **Q: auto-merge를 켜도 되나요?**
 - L3 단계에서는 수동 승인을 권장합니다
 - AI가 생성한 코드를 검토 없이 배포하면 위험할 수 있습니다
