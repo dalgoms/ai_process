@@ -14,7 +14,9 @@ Growth marketing lead with 10+ years of hands-on experience in designing and ope
 
 ## Core Competencies
 
-Analysis-Driven Planning & Design · Growth Marketing · Marketing Automation · Website Planning & Operations (Wix Full-Stack) · CMS/DB · Lead Flow Design · Content & Acquisition Structure Design · Data-Driven Experimentation · Cross-functional Collaboration
+**Marketing:** Growth Marketing · Performance Marketing · SEO · Content & Acquisition Structure Design
+**Planning & Ops:** Analysis-Driven Planning & Design · Website Planning & Operations (Wix Full-Stack) · CMS/DB · Lead Flow Design
+**Collaboration & Experimentation:** Data-Driven Experimentation · Cross-functional Collaboration · Marketing Automation
 
 ---
 
@@ -33,6 +35,16 @@ Led the full scope of marketing strategy, execution, website operations, and aut
 - Coordinated across product, design, and sales teams to align service messaging, campaign timing, and launch operations
 - Stabilized B2C acquisition infrastructure by 2025 and established the operational foundation for B2B expansion
 
+#### Internal AI Initiatives (2026~)
+
+AI-driven initiatives requested internally and rapidly applied to real operations.
+
+- **WebScout** — Competitor website structure analysis tool. Automated site architecture analysis from days to hours — [live](https://webscout-next-8veo.vercel.app) · [github](https://github.com/dalgoms/webscout-next)
+- **MEFIMAKE** — Meta ad creative generator. Reduced creative production time from hours to minutes; established monthly batch production workflow — [live](https://mefimake.vercel.app) · [github](https://github.com/dalgoms/public/tree/main/Mefimake)
+- **Business Automation System** — End-to-end lead capture→CRM→alerting→follow-up automation. Shifted initial lead response from hours to real-time automated alerts
+- **Automation Process Playbook** — Built Notion→GitHub Issue→PR→CI→Deploy automation structure and reusable playbooks — [github](https://github.com/dalgoms/ai_process)
+- **Alert Automation (Google/Naver)** — Shifted competitor and keyword monitoring from manual to fully automated. Real-time detection and Telegram/Slack alerting
+
 ### AI Service Co-Development — SK hynix · SK Telecom (Internal B2B Project)
 
 2023 — 2025
@@ -42,36 +54,13 @@ Participated in the planning and launch of an AI-powered meeting transcription s
 - Joined from early product planning stage through design collaboration and go-to-market preparation
 - Handled B2B client communication, onboarding support, and initial service operations
 - Proposed and contributed to feature improvement directions based on user feedback and operational data
+- Achieved KRW 1.1B in service revenue
 
 ---
 
 ## Education
 
 Ajou University — B.A. in Media Studies
-
----
-
-## Practical Application Cases (2026~)
-
-AI-driven initiatives requested internally and rapidly applied to real operations.
-
-**WebScout — Service Structure Analysis Tool**
-An internal analysis tool for evaluating website architecture, detecting hidden pages, and mapping SEO content clusters. Used in practice to assess competitor structures and identify acquisition opportunities.
-Tech stack: Next.js / TypeScript / Vercel — [webscout-next-8veo.vercel.app](https://webscout-next-8veo.vercel.app) · [github](https://github.com/dalgoms/webscout-next)
-
-**Automation Process Playbook**
-A project to design a centralized operational structure for workflow automation. Organized the flow from Notion task intake → GitHub Issue → code work → PR → CI → deployment, and built reusable operational documents and automation playbooks.
-Link: [github.com/dalgoms/ai_process](https://github.com/dalgoms/ai_process)
-
-**Business Automation System**
-An operational system currently in production. Includes lead capture (inquiry form → Make → Notion CRM → Telegram/Email), schedule-based follow-up automation, content draft assistance, and multi-channel notification integration across Telegram, Email, Slack, KakaoTalk, and SMS.
-
-**MEFIMAKE — Meta Ad Creative Generator**
-A browser-based creative IDE built to solve the creative production bottleneck for performance marketing teams. Handles AI-powered copy generation (headlines, subtexts, CTAs), multi-size auto-export (1:1, 16:9, 9:16), and batch generation (5 variants × 3 sizes = 15 images) in a single interface. Integrates with WebScout and Meta Library for competitive creative research through production.
-Tech stack: Vanilla JS / CSS3 / Vercel — [mefimake.vercel.app](https://mefimake.vercel.app) · [github](https://github.com/dalgoms/public/tree/main/Mefimake)
-
-**Alert Automation (Google/Naver)**
-An automated monitoring structure using Google Alerts and Naver keyword alerts for industry, competitor, and keyword tracking. Collected alerts are automatically organized into Notion DB via Make, with real-time notifications sent to Telegram/Slack when significant changes are detected. Automated the early detection layer of marketing research and competitive analysis to improve response speed.
 
 ---
 
