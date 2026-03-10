@@ -26,7 +26,6 @@
     word-break: keep-all;
   }
 
-  /* ── Header ── */
   .header { margin-bottom: 20px; }
   .name {
     font-size: 20pt;
@@ -50,7 +49,6 @@
     text-decoration: none;
   }
 
-  /* ── Section ── */
   .section { margin-bottom: 18px; }
   .section-title {
     font-size: 10.5pt;
@@ -61,29 +59,20 @@
     border-bottom: 1px solid #ddd;
   }
 
-  /* ── Divider ── */
-  .divider {
-    border: none;
-    height: 1px;
-    background: #e5e5e5;
-    margin: 18px 0;
-  }
-
-  /* ── Summary ── */
   .summary {
     font-size: 9.5pt;
     color: #333;
     line-height: 1.75;
   }
+  .summary p { margin-bottom: 6px; }
+  .summary p:last-child { margin-bottom: 0; }
 
-  /* ── Competencies ── */
   .competencies {
     font-size: 9.5pt;
     color: #444;
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
-  /* ── Experience ── */
   .exp-block { margin-bottom: 14px; }
   .exp-header {
     display: flex;
@@ -114,7 +103,6 @@
     line-height: 1.6;
   }
 
-  /* ── Bullet ── */
   ul.bullets {
     list-style: none;
     padding: 0;
@@ -134,7 +122,6 @@
     color: #aaa;
   }
 
-  /* ── Initiatives ── */
   .init-intro {
     font-size: 9pt;
     color: #777;
@@ -160,19 +147,22 @@
     line-height: 1.6;
     margin-top: 2px;
   }
+  .init-tech {
+    font-size: 8.5pt;
+    color: #999;
+    margin-top: 2px;
+  }
 
-  /* ── Tools ── */
   .tools-line {
     font-size: 9pt;
     color: #555;
-    line-height: 1.7;
+    line-height: 1.8;
   }
   .tools-line strong {
     color: #333;
     font-weight: 600;
   }
 
-  /* ── Working Style ── */
   ul.style-list {
     list-style: none;
     padding: 0;
@@ -192,7 +182,6 @@
     color: #bbb;
   }
 
-  /* ── Footer ── */
   .footer {
     margin-top: 14px;
     padding-top: 10px;
@@ -206,10 +195,10 @@
 </head>
 <body>
 
-<!-- A. Header -->
+<!-- Header -->
 <div class="header">
   <div class="name">Seyoung Lee</div>
-  <div class="title">Growth Marketing Lead / AI Operations</div>
+  <div class="title">Growth Marketing Lead / Automation & Web Operations</div>
   <div class="contact">
     010-4828-4737 &nbsp;·&nbsp; seyoung8967@gmail.com &nbsp;·&nbsp;
     <a href="https://github.com/dalgoms">GitHub</a> &nbsp;·&nbsp;
@@ -217,42 +206,56 @@
   </div>
 </div>
 
-<!-- B. Professional Summary -->
+<!-- Summary -->
 <div class="section">
-  <div class="section-title">Professional Summary</div>
-  <p class="summary">
-    Growth marketing lead with 8+ years of hands-on experience in acquisition, conversion optimization, and retention system design. My core strength is analysis-driven planning and design combined with AI automation: I identify problems, form hypotheses, and build execution-ready workflows that teams can act on immediately. I operate end-to-end — from business website planning and operations (Wix: domain setup, site architecture, CMS/DB, form/lead flow design, customization) through marketing automation pipelines (Notion, Make, GPT, Vercel) to performance optimization. I prepare AI-assisted analysis, operational ideas, and execution-ready structures assuming actual business work will begin — not to create portfolio pieces, but to reduce time-to-action.
-  </p>
+  <div class="section-title">Summary</div>
+  <div class="summary">
+    <p>
+      Growth marketing lead with 10+ years of hands-on experience in designing and operating user acquisition, conversion optimization, and retention systems. My core strength is analysis-driven planning and design combined with execution-focused operations. I define problems, form hypotheses, then build the systems a business needs end-to-end — from website construction, lead flow design, and content operations to marketing automation.
+    </p>
+    <p>
+      In particular, I can independently handle the full lifecycle of Wix-based business websites: domain purchase and setup, site planning and build, CMS/database operations, lead flow design, and customization. I also design operational structures using Notion, Make, GPT, and Vercel to reduce repetitive work and increase execution speed. My strength lies in preparing initial analysis and execution frameworks for real business deployment, not portfolio-ready deliverables.
+    </p>
+  </div>
 </div>
 
-<!-- C. Core Competencies -->
+<!-- Core Competencies -->
 <div class="section">
   <div class="section-title">Core Competencies</div>
   <p class="competencies">
-    Analysis-Driven Planning & Design &nbsp;·&nbsp; Growth Marketing &nbsp;·&nbsp; AI Workflow Design &nbsp;·&nbsp; Marketing Automation (Notion / Make / GPT) &nbsp;·&nbsp; Business Website Operations (Wix: planning, build, CMS, DB, lead flow, customization) &nbsp;·&nbsp; Content & Lead Systems &nbsp;·&nbsp; Data-Driven Experimentation &nbsp;·&nbsp; Cross-functional Collaboration
+    Analysis-Driven Planning & Design<br>
+    Growth Marketing<br>
+    Marketing Automation<br>
+    Website Planning & Operations<br>
+    Wix-Based Business Website Build<br>
+    CMS/DB Operations<br>
+    Lead Flow Design<br>
+    Content & Acquisition Structure Design<br>
+    Data-Driven Experimentation<br>
+    Cross-functional Collaboration
   </p>
 </div>
 
-<!-- D. Experience -->
+<!-- Experience -->
 <div class="section">
   <div class="section-title">Experience</div>
 
   <div class="exp-block">
     <div class="exp-header">
-      <span class="exp-company">(주)팀벨</span>
-      <span class="exp-period">2017.07 — Present</span>
+      <span class="exp-company">timbel</span>
+      <span class="exp-period">2015.07 — Present</span>
     </div>
-    <div class="exp-role">홍보마케팅팀 팀장 (Marketing Team Lead)</div>
+    <div class="exp-role">Marketing Team Lead</div>
     <p class="exp-summary">
-      Led the full marketing function for a voice-data technology company (~15 employees), from strategy through execution across B2C and B2B channels.
+      Led the full scope of marketing strategy, execution, website operations, and automation architecture at a voice-data technology company.
     </p>
     <ul class="bullets">
-      <li>Planned and executed performance marketing campaigns across Meta, Google, and Naver; managed annual ad budgets of KRW 800M–1.4B</li>
-      <li>Independently planned, built, and operated business websites on Wix — handling domain setup, site architecture, CMS/database operations, inquiry form and lead capture flow design, and custom development for business needs; designed landing page UX and conversion flows from scratch</li>
-      <li>Built SEO-driven content strategy and lead acquisition funnels based on site structure analysis</li>
+      <li>Planned and executed B2C performance marketing campaigns across Meta, Google, and Naver; managed annual ad budgets of KRW 800M–1.4B</li>
+      <li>Independently planned, built, and operated business websites on Wix — domain setup, site architecture design, CMS/DB operations, inquiry form and lead capture flow design, and customization for business requirements</li>
+      <li>Designed landing page UX and conversion flows from scratch; developed SEO and acquisition channel strategies based on site structure analysis</li>
       <li>Coordinated across product, design, and sales teams to align service messaging, campaign timing, and launch operations</li>
-      <li>Introduced AI-powered marketing automation: built Notion + Make + GPT pipelines for content research, lead management, and multi-channel alerting</li>
-      <li>Transitioned growth systems from B2C to B2B after stabilizing acquisition infrastructure in 2025</li>
+      <li>Introduced operational automation using Notion, Make, and GPT — systematizing content research, lead management, and multi-channel alerting</li>
+      <li>Participated in B2B transition operations after stabilizing B2C acquisition infrastructure in 2025</li>
     </ul>
   </div>
 
@@ -262,85 +265,82 @@
       <span class="exp-period">Joint Initiative</span>
     </div>
     <div class="exp-role">AI-powered meeting transcription service (STT-based)</div>
+    <p class="exp-summary">
+      Participated in the planning and launch process.
+    </p>
     <ul class="bullets">
       <li>Joined from early product planning stage through design collaboration and go-to-market preparation</li>
       <li>Handled B2B client communication, onboarding support, and initial service operations</li>
-      <li>Proposed feature improvement directions based on user feedback and operational data</li>
+      <li>Proposed and contributed to feature improvement directions based on user feedback and operational data</li>
     </ul>
   </div>
 </div>
 
-<!-- E. Key Achievements -->
+<!-- Key Achievements -->
 <div class="section">
   <div class="section-title">Key Achievements</div>
   <ul class="bullets">
-    <li>Grew B2C product revenue from KRW 5.2B (2023) to KRW 7.2B (2024), achieving 650% ROAS while scaling lead volume 14x over two years</li>
-    <li>Designed UTM-based attribution tracking, ran Meta ad creative A/B tests, and built hidden landing pages for conversion experiments — optimizing based on per-minute inflow data</li>
-    <li>Built a content and lead automation pipeline using Notion + Make + GPT, reducing marketing research time by approximately 80%</li>
-    <li>Designed an end-to-end lead management system: inquiry form → Notion CRM → alerting → automated follow-up reminders for uncontacted leads</li>
-    <li>Stabilized the full B2C growth system by 2025 and initiated expansion into B2B operations</li>
+    <li>Grew B2C product revenue from KRW 5.2B (2023) to KRW 7.2B (2024), achieving 650% ROAS</li>
+    <li>Scaled lead volume 14x over two years</li>
+    <li>Designed UTM-based attribution tracking, ran Meta ad creative A/B tests, and operated hidden landing page conversion experiments for data-driven optimization</li>
+    <li>Built a content and lead automation structure using Notion + Make + GPT, reducing marketing research time by approximately 80%</li>
+    <li>Designed an end-to-end lead management system: inquiry form → Notion CRM → alerting → automated follow-up for uncontacted leads</li>
+    <li>Stabilized the full B2C growth system by 2025 and established the operational foundation for B2B expansion</li>
   </ul>
 </div>
 
-<!-- F. Selected Practical AI Initiatives -->
+<!-- Practical Application Cases -->
 <div class="section">
-  <div class="section-title">Analysis-Driven Planning + AI Execution Initiatives</div>
+  <div class="section-title">Practical Application Cases</div>
   <p class="init-intro">
-    Each initiative follows the same approach: analysis-driven planning first, then AI-automated execution. Structured for real business application, not as portfolio showcases.
+    The same approach applies to every project: first analyze business structure and user flow, then design actionable operational methods and automation architecture. The focus is on preparing initial analysis and execution frameworks that connect directly to real work — not showcase portfolios.
   </p>
 
   <div class="init-block">
-    <div class="init-name">Healthcare Retention Analysis (AI 건강이)</div>
+    <div class="init-name">WebScout — Service Structure Analysis Tool</div>
     <p class="init-desc">
-      Prepared a pre-engagement business analysis for the healthcare app domain. Crawled and analyzed 20,000 pages of a competing service to identify structural retention gaps. Organized initial hypotheses around AI-driven daily health notifications, chatbot engagement, and a morning/evening health loop. Designed a Braze CRM integration scenario and user flow framework as an execution-ready starting point.
+      An internal analysis tool for evaluating website architecture, detecting hidden pages, and mapping SEO content clusters. Used in practice to assess competitor structures and identify acquisition opportunities.
     </p>
+    <p class="init-tech">Tech stack: Next.js / Vercel</p>
   </div>
 
   <div class="init-block">
-    <div class="init-name">WebScout — Service Structure Analysis Tool <a href="https://github.com/dalgoms/webscout-next">github</a></div>
+    <div class="init-name">Automation Process Playbook <a href="https://github.com/dalgoms/ai_process">github</a></div>
     <p class="init-desc">
-      Built an internal analysis tool for evaluating website architecture, hidden page detection, and SEO content cluster mapping. Used in practice to assess competitor structures and identify acquisition opportunities. (Next.js / Vercel)
-    </p>
-  </div>
-
-  <div class="init-block">
-    <div class="init-name">AI Process Playbook <a href="https://github.com/dalgoms/ai_process">github</a></div>
-    <p class="init-desc">
-      Structured a central operational hub for AI-assisted workflow automation. Designed a pipeline from Notion task intake through GitHub Issue, GPT Codex processing, pull request, CI, and deployment. Documents reusable automation architecture and operational playbooks.
+      A project to design a centralized operational structure for workflow automation. Organized the flow from Notion task intake → GitHub Issue → code work → PR → CI → deployment, and built reusable operational documents and automation playbooks.
     </p>
   </div>
 
   <div class="init-block">
     <div class="init-name">Business Automation System</div>
     <p class="init-desc">
-      Operational system currently in production. Connects lead capture (web form → Make → Notion CRM → Telegram/Email), scheduled follow-up automation, AI-assisted content drafting pipeline, and multi-channel notifications across Telegram, Email, Slack, KakaoTalk, and SMS.
+      An operational system currently in production. Includes lead capture (inquiry form → Make → Notion CRM → Telegram/Email), schedule-based follow-up automation, content draft assistance, and multi-channel notification integration across Telegram, Email, Slack, KakaoTalk, and SMS.
     </p>
   </div>
 </div>
 
-<!-- G. Tools -->
+<!-- Tools -->
 <div class="section">
   <div class="section-title">Tools</div>
   <p class="tools-line">
-    <strong>AI:</strong> GPT, Claude, Cursor &nbsp;&nbsp;
-    <strong>Automation:</strong> Make, Notion API, GitHub Actions &nbsp;&nbsp;
-    <strong>Dev:</strong> Next.js, Node.js, Vercel, TypeScript &nbsp;&nbsp;
-    <strong>Web Platform:</strong> Wix (domain management, site planning & build, CMS/DB operations, form/lead flow, customization) &nbsp;&nbsp;
-    <strong>Design:</strong> Figma
+    <strong>Web/Dev:</strong> Wix, Next.js, Node.js, Vercel, TypeScript<br>
+    <strong>Automation/Ops:</strong> Make, Notion API, GitHub Actions<br>
+    <strong>Design:</strong> Figma, Adobe Photoshop, Adobe Illustrator<br>
+    <strong>Content/Video:</strong> Adobe Premiere Pro, After Effects
   </p>
 </div>
 
-<!-- H. Working Style -->
+<!-- Working Style -->
 <div class="section">
   <div class="section-title">Working Style</div>
   <ul class="style-list">
-    <li>Analyze first, then automate: structure problems into actionable plans before building</li>
-    <li>Use AI tools to accelerate research, framing, and operational planning — then systematize with automation</li>
-    <li>Operate independently across the full stack: from website planning and build to workflow integration and optimization</li>
+    <li>Analyze problems first, then organize into actionable plans and operational structures</li>
+    <li>Automate repetitive work and systematize into formats teams can use immediately</li>
+    <li>Operate independently from website planning and build through workflow integration and optimization</li>
   </ul>
 </div>
 
-<!-- I. Education -->
+<!-- Education -->
 <div class="footer">
   Ajou University — B.A. in Media Studies
 </div>
