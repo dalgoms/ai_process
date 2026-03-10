@@ -33,11 +33,11 @@ Led the full scope of marketing strategy, execution, website operations, and aut
 - Coordinated across product, design, and sales teams to align service messaging, campaign timing, and launch operations
 - Stabilized B2C acquisition infrastructure by 2025 and established the operational foundation for B2B expansion
 
-### AI Service Project — SK hynix · SK Telecom Joint Initiative
+### AI Service Co-Development — SK hynix · SK Telecom (Internal B2B Project)
 
 2023 — 2025
 
-Participated in the planning and launch of an AI-powered meeting transcription service (STT-based).
+Participated in the planning and launch of an AI-powered meeting transcription service (STT-based), co-developed with SK hynix and SK Telecom as an internal B2B project.
 
 - Joined from early product planning stage through design collaboration and go-to-market preparation
 - Handled B2B client communication, onboarding support, and initial service operations
@@ -53,7 +53,7 @@ Ajou University — B.A. in Media Studies
 
 ## Practical Application Cases (2026~)
 
-Cases actually applied to real work since 2026.
+AI-driven initiatives requested internally and rapidly applied to real operations.
 
 **WebScout — Service Structure Analysis Tool**
 An internal analysis tool for evaluating website architecture, detecting hidden pages, and mapping SEO content clusters. Used in practice to assess competitor structures and identify acquisition opportunities.
