@@ -26,12 +26,12 @@ Analysis-Driven Planning & Design · Growth Marketing · Marketing Automation ·
 
 Led the full scope of marketing strategy, execution, website operations, and automation architecture at a voice-data technology company.
 
-- Planned and executed B2C performance marketing campaigns across Meta, Google, and Naver; managed annual ad budgets of KRW 800M–1.4B
-- Independently planned, built, and operated business websites on Wix — domain setup, site architecture design, CMS/DB operations, inquiry form and lead capture flow design, and customization for business requirements
-- Designed landing page UX and conversion flows from scratch; developed SEO and acquisition channel strategies based on site structure analysis
+- Planned and executed B2C performance marketing campaigns across Meta, Google, and Naver (annual ad budgets KRW 800M–1.4B). Grew revenue from KRW 5.2B to 7.2B, achieving 650% ROAS; scaled lead volume 14x over two years
+- Designed UTM-based attribution tracking, ran Meta ad creative A/B tests, and operated hidden landing page conversion experiments for data-driven optimization
+- Independently planned, built, and operated business websites on Wix (domain, CMS/DB, lead flow, customization). Designed landing page UX and conversion flows; developed SEO and acquisition channel strategies
+- Introduced operational automation using Notion + Make + GPT (content research, lead management, multi-channel alerting), reducing marketing research time by ~80%. Designed lead management system: inquiry form → Notion CRM → alerting → automated follow-up for uncontacted leads
 - Coordinated across product, design, and sales teams to align service messaging, campaign timing, and launch operations
-- Introduced operational automation using Notion, Make, and GPT — systematizing content research, lead management, and multi-channel alerting
-- Participated in B2B transition operations after stabilizing B2C acquisition infrastructure in 2025
+- Stabilized B2C acquisition infrastructure by 2025 and established the operational foundation for B2B expansion
 
 ### AI Service Project — SK hynix · SK Telecom Joint Initiative
 
@@ -48,17 +48,6 @@ Participated in the planning and launch of an AI-powered meeting transcription s
 ## Education
 
 Ajou University — B.A. in Media Studies
-
----
-
-## Key Achievements
-
-- Grew B2C product revenue from KRW 5.2B (2023) to KRW 7.2B (2024), achieving 650% ROAS
-- Scaled lead volume 14x over two years
-- Designed UTM-based attribution tracking, ran Meta ad creative A/B tests, and operated hidden landing page conversion experiments for data-driven optimization
-- Built a content and lead automation structure using Notion + Make + GPT, reducing marketing research time by approximately 80%
-- Designed an end-to-end lead management system: inquiry form → Notion CRM → alerting → automated follow-up for uncontacted leads
-- Stabilized the full B2C growth system by 2025 and established the operational foundation for B2B expansion
 
 ---
 
@@ -86,18 +75,11 @@ An automated monitoring structure using Google Alerts and Naver keyword alerts f
 
 ---
 
-## Tools
+## Skills
 
 **Web/Dev:** Wix, Next.js, Node.js, Vercel, TypeScript
 **Automation/Ops:** Make, Notion API, GitHub Actions
 **Design:** Figma, Adobe Photoshop, Adobe Illustrator
 **Content/Video:** Adobe Premiere Pro, After Effects
 
----
-
-## Working Style
-
-- Analyze problems first, then organize into actionable plans and operational structures
-- Automate repetitive work and systematize into formats teams can use immediately
-- Operate independently from website planning and build through workflow integration and optimization
 
