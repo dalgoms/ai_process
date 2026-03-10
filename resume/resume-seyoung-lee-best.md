@@ -80,6 +80,10 @@ Link: [github.com/dalgoms/ai_process](https://github.com/dalgoms/ai_process)
 **Business Automation System**
 An operational system currently in production. Includes lead capture (inquiry form → Make → Notion CRM → Telegram/Email), schedule-based follow-up automation, content draft assistance, and multi-channel notification integration across Telegram, Email, Slack, KakaoTalk, and SMS.
 
+**MEFIMAKE — Meta Ad Creative Generator**
+A browser-based creative IDE built to solve the creative production bottleneck for performance marketing teams. Handles AI-powered copy generation (headlines, subtexts, CTAs), multi-size auto-export (1:1, 16:9, 9:16), and batch generation (5 variants × 3 sizes = 15 images) in a single interface. Integrates with WebScout and Meta Library for competitive creative research through production.
+Tech stack: Vanilla JS / CSS3 / Vercel — [mefimake.vercel.app](https://mefimake.vercel.app)
+
 **Alert Automation (Google/Naver)**
 An automated monitoring structure using Google Alerts and Naver keyword alerts for industry, competitor, and keyword tracking. Collected alerts are automatically organized into Notion DB via Make, with real-time notifications sent to Telegram/Slack when significant changes are detected. Automated the early detection layer of marketing research and competitive analysis to improve response speed.
 
