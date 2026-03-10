@@ -77,9 +77,10 @@ An automated monitoring structure using Google Alerts and Naver keyword alerts f
 
 ## Skills
 
-**Web/Dev:** Wix, Next.js, Node.js, Vercel, TypeScript
+**AI:** GPT, Claude, Cursor, Google NotebookLM, GenSpark
 **Automation/Ops:** Make, Notion API, GitHub Actions
-**Design:** Figma, Adobe Photoshop, Adobe Illustrator
-**Content/Video:** Adobe Premiere Pro, After Effects
+**Web/Dev:** Wix, Next.js, Node.js, Vercel, TypeScript
+**Design:** Figma, Adobe Photoshop, Adobe Illustrator, Midjourney, NanoBanana
+**Content/Video:** Adobe Premiere Pro, After Effects, Suno
 
 
