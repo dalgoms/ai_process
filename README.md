@@ -176,5 +176,6 @@ Issue에 `@codex` 코멘트를 달면 다시 실행
 | [Setup Guide](docs/setup-guide.md) | 처음부터 전체 파이프라인 구축하는 방법 |
 | [Workflows](docs/workflows.md) | 각 GitHub Actions 워크플로우 상세 동작 |
 | [Make.com Scenarios](docs/make-scenarios.md) | Make.com 시나리오 설정 가이드 (리드, 팔로업, 콘텐츠) |
+| [Business Case: Healthcare](docs/business-case-healthcare.md) | 헬스케어 플랫폼 적용 사례 (B2B/B2C/내부 자동화) |
 | [Troubleshooting](docs/troubleshooting.md) | 자주 발생하는 문제 해결 + FAQ |
 | [Changelog](docs/changelog.md) | 구축 이력, 해결한 버그, 참조 링크 |
