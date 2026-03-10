@@ -6,10 +6,15 @@
 
 ## User Growth Loop
 
-```
-검색 유입 → 건강 콘텐츠 → 비대면 진료 → 약 배송 → 만족도 조사 → 재방문 → 추천
-    ▲                                                                        │
-    └────────────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+    Search["Search / Content"] --> Install["App Install"]
+    Install --> Visit["Telemedicine Visit"]
+    Visit --> Delivery["Medicine Delivery"]
+    Delivery --> Satisfaction["Patient Satisfaction"]
+    Satisfaction --> Revisit["Revisit"]
+    Revisit --> Referral["Referral"]
+    Referral --> Search
 ```
 
 ---
@@ -167,30 +172,17 @@ B2B 제휴 문의
 
 ## Growth Loop 전체 맵
 
-```
-                    ┌──────────┐
-                    │ SEO/광고  │
-                    │ 콘텐츠   │
-                    └────┬─────┘
-                         ▼
-                    ┌──────────┐
-             ┌─────│ 회원가입  │
-             │     └────┬─────┘
-             │          ▼
-             │     ┌──────────┐
-             │     │ 첫 진료  │
-             │     └────┬─────┘
-             │          ▼
-             │     ┌──────────┐
-             │     │ 약 배송  │
-             │     └────┬─────┘
-             │          ▼
-             │     ┌──────────┐
-             │     │ 만족조사 │
-             │     └────┬─────┘
-             │          ▼
-             │     ┌──────────┐
-      추천 ──┘     │ 재방문   │──── 복약알림, 재진료
-      리뷰         │ 구독     │     콘텐츠 추천
-                   └──────────┘
+```mermaid
+flowchart TB
+    SEO["SEO / Ads / Content"] --> Signup["Sign Up"]
+    Signup --> FirstVisit["First Telemedicine Visit"]
+    FirstVisit --> MedDelivery["Medicine Delivery"]
+    MedDelivery --> Survey["Satisfaction Survey"]
+    Survey --> Revisit["Revisit / Subscribe"]
+    Revisit --> Referral["Referral / Review"]
+    Referral --> SEO
+
+    Revisit --> MedReminder["Medication Reminder"]
+    Revisit --> ContentRec["Content Recommendation"]
+    MedReminder --> FirstVisit
 ```

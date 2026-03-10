@@ -235,3 +235,5 @@ CS팀이 Notion Work Inbox에 버그 등록
 | [Data Layer](../playbooks/healthcare/data-layer.md) | 데이터 구조 및 AI 활용 설계 |
 | [Leads DB Schema Template](../templates/notion-leads-db-schema.md) | Notion Leads DB 범용 스키마 |
 | [Make.com Scenario Template](../templates/make-scenario-template.md) | Make.com 시나리오 설계 템플릿 |
+| [Automation Architecture Diagram](../diagrams/healthcare-automation-architecture.md) | 헬스케어 자동화 Mermaid 다이어그램 |
+| [Growth Loop Diagram](../diagrams/healthcare-growth-loop.md) | 성장 루프 Mermaid 다이어그램 |

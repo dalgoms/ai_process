@@ -6,32 +6,43 @@ AI 활용을 위한 헬스케어 플랫폼 데이터 구조.
 
 ## 데이터 영역
 
-```
-┌──────────────────────────────────────────────────────┐
-│                    DATA SOURCES                       │
-│                                                      │
-│  ┌────────────┐  ┌────────────┐  ┌────────────────┐ │
-│  │ Patient    │  │ Partner    │  │ Marketing      │ │
-│  │ Data       │  │ Data       │  │ Data           │ │
-│  └─────┬──────┘  └─────┬──────┘  └───────┬────────┘ │
-│        │               │                  │          │
-└────────┼───────────────┼──────────────────┼──────────┘
-         │               │                  │
-         ▼               ▼                  ▼
-┌──────────────────────────────────────────────────────┐
-│                    AI LAYER                           │
-│                                                      │
-│  증상 분석    리드 스코어링    콘텐츠 추천            │
-│  문의 분류    이탈 예측        전환율 최적화          │
-│                                                      │
-└──────────────────────────┬───────────────────────────┘
-                           ▼
-┌──────────────────────────────────────────────────────┐
-│                    OUTPUT                             │
-│                                                      │
-│  개인화 추천    자동 알림    리포트    대시보드        │
-│                                                      │
-└──────────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    subgraph sources ["Data Sources"]
+        Patient["Patient Data"]
+        Partner["Partner Data"]
+        Marketing["Marketing Data"]
+    end
+
+    subgraph ai ["AI Layer"]
+        Symptom["Symptom Analysis"]
+        LeadScore["Lead Scoring"]
+        ContentRec["Content Recommendation"]
+        InquiryClass["Inquiry Classification"]
+        ChurnPred["Churn Prediction"]
+        ConvOpt["Conversion Optimization"]
+    end
+
+    subgraph output ["Output"]
+        Personalized["Personalized Recommendations"]
+        AutoNotify["Automated Notifications"]
+        Reports["Reports"]
+        Dashboard["Dashboard"]
+    end
+
+    Patient --> Symptom
+    Patient --> ChurnPred
+    Partner --> LeadScore
+    Marketing --> ContentRec
+    Marketing --> ConvOpt
+    Patient --> InquiryClass
+
+    Symptom --> Personalized
+    LeadScore --> AutoNotify
+    ContentRec --> Personalized
+    InquiryClass --> AutoNotify
+    ChurnPred --> Reports
+    ConvOpt --> Dashboard
 ```
 
 ---
