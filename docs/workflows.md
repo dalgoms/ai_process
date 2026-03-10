@@ -138,7 +138,7 @@ GitHub에서 `build` job이 required check로 설정되어 있어, CI 실패 시
 
 | 항목 | 값 |
 |------|-----|
-| 트리거 | `push: master`, `workflow_run: [GPT Codex Agent, CI Build Check]` |
+| 트리거 | `push: master`, `workflow_run: [GPT Codex Agent]` |
 | 필요 시크릿 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` |
 
 ### 알림 유형
@@ -148,8 +148,6 @@ GitHub에서 `build` job이 required check로 설정되어 있어, CI 실패 시
 | master push | `[DEPLOY SUCCESS] repo, branch, commit, author, SHA, run URL` |
 | Codex 성공 | `[SUCCESS] GPT Codex Agent, repo, branch, trigger, SHA, run URL` |
 | Codex 실패 | `[FAILED] GPT Codex Agent, repo, branch, trigger, SHA, run URL` |
-| CI 성공 | `[SUCCESS] CI Build Check, ...` |
-| CI 실패 | `[FAILED] CI Build Check, ...` |
 
 ---
 
