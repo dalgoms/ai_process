@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이세영 — 이력서</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 10pt;
+    line-height: 1.65;
+    color: #222;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 20mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    word-break: keep-all;
+  }
+
+  .header { margin-bottom: 20px; }
+  .name {
+    font-size: 20pt;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.5px;
+  }
+  .title {
+    font-size: 10.5pt;
+    font-weight: 400;
+    color: #777;
+    margin-top: 2px;
+    margin-bottom: 10px;
+  }
+  .contact {
+    font-size: 9pt;
+    color: #666;
+  }
+  .contact a {
+    color: #555;
+    text-decoration: none;
+  }
+
+  .section { margin-bottom: 18px; }
+  .section-title {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .summary {
+    font-size: 9.5pt;
+    color: #333;
+    line-height: 1.75;
+  }
+
+  .competencies {
+    font-size: 9.5pt;
+    color: #444;
+    line-height: 1.7;
+  }
+
+  .exp-block { margin-bottom: 14px; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+  .exp-company {
+    font-size: 10pt;
+    font-weight: 600;
+    color: #111;
+  }
+  .exp-period {
+    font-size: 9pt;
+    color: #999;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .exp-role {
+    font-size: 9pt;
+    color: #777;
+    margin-bottom: 4px;
+  }
+  .exp-summary {
+    font-size: 9pt;
+    color: #444;
+    margin-bottom: 4px;
+    line-height: 1.6;
+  }
+
+  ul.bullets {
+    list-style: none;
+    padding: 0;
+  }
+  ul.bullets li {
+    font-size: 9.5pt;
+    color: #333;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 3px;
+    line-height: 1.6;
+  }
+  ul.bullets li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #aaa;
+  }
+
+  .init-intro {
+    font-size: 9pt;
+    color: #777;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  .init-block { margin-bottom: 10px; }
+  .init-name {
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: #222;
+  }
+  .init-name a {
+    font-size: 8.5pt;
+    font-weight: 400;
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 6px;
+  }
+  .init-desc {
+    font-size: 9pt;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 2px;
+  }
+
+  .tools-line {
+    font-size: 9pt;
+    color: #555;
+    line-height: 1.7;
+  }
+  .tools-line strong {
+    color: #333;
+    font-weight: 600;
+  }
+
+  ul.style-list {
+    list-style: none;
+    padding: 0;
+  }
+  ul.style-list li {
+    font-size: 9pt;
+    color: #555;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 2px;
+    line-height: 1.6;
+  }
+  ul.style-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #bbb;
+  }
+
+  .footer {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid #e5e5e5;
+    font-size: 9pt;
+    color: #999;
+  }
+
+  @media print { body { padding: 0; } }
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<div class="header">
+  <div class="name">이세영</div>
+  <div class="title">Growth Marketing Lead / AI Operations</div>
+  <div class="contact">
+    010-4828-4737 &nbsp;·&nbsp; seyoung8967@gmail.com &nbsp;·&nbsp;
+    <a href="https://github.com/dalgoms">GitHub</a> &nbsp;·&nbsp;
+    <a href="https://linkedin.com/in/">LinkedIn</a>
+  </div>
+</div>
+
+<!-- 요약 -->
+<div class="section">
+  <div class="section-title">요약</div>
+  <p class="summary">
+    8년 이상의 실무 경험을 바탕으로 사용자 유입, 전환 최적화, 리텐션 구조를 설계하고 직접 운영해온 Growth Marketing 리드입니다. Notion, Make, GPT, Vercel을 활용한 마케팅 자동화 파이프라인을 실험이 아닌 핵심 운영 인프라로 구축하고 있습니다. 포트폴리오용 결과물을 만드는 것이 아니라, 실제 업무를 전제로 문제를 정의하고 가설을 세우고 팀이 바로 실행할 수 있는 초기 분석과 실행 구조를 준비하는 것이 강점입니다.
+  </p>
+</div>
+
+<!-- 핵심 역량 -->
+<div class="section">
+  <div class="section-title">핵심 역량</div>
+  <p class="competencies">
+    Growth Marketing &nbsp;·&nbsp; AI 워크플로우 설계 &nbsp;·&nbsp; 마케팅 자동화 (Notion / Make / GPT) &nbsp;·&nbsp; 콘텐츠 & 리드 시스템 &nbsp;·&nbsp; 데이터 기반 실험 &nbsp;·&nbsp; 부서 간 협업
+  </p>
+</div>
+
+<!-- 경력 -->
+<div class="section">
+  <div class="section-title">경력</div>
+
+  <div class="exp-block">
+    <div class="exp-header">
+      <span class="exp-company">(주)팀벨</span>
+      <span class="exp-period">2017.07 — 재직 중</span>
+    </div>
+    <div class="exp-role">홍보마케팅팀 팀장</div>
+    <p class="exp-summary">
+      음성 데이터 기술 기업(약 15명 규모)에서 마케팅 전략 수립부터 실행까지 전 과정을 주도.
+    </p>
+    <ul class="bullets">
+      <li>Meta, Google, Naver 등 B2C 퍼포먼스 마케팅 캠페인 기획 및 집행. 연간 광고 예산 8억~14억 운영</li>
+      <li>SEO 기반 콘텐츠 전략 및 리드 유입 퍼널 구축. 랜딩페이지 UX 설계와 전환 흐름을 직접 설계</li>
+      <li>제품, 디자인, 영업 팀과 협업하여 서비스 메시지, 캠페인 일정, 런칭 운영을 조율</li>
+      <li>AI 기반 마케팅 자동화 도입: Notion + Make + GPT 파이프라인으로 콘텐츠 리서치, 리드 관리, 멀티채널 알림 자동화</li>
+      <li>2025년 B2C 유입 인프라 안정화 후 B2B 사업으로 전환 진행</li>
+    </ul>
+  </div>
+
+  <div class="exp-block">
+    <div class="exp-header">
+      <span class="exp-company">AI 서비스 프로젝트 — SK hynix · SK Telecom</span>
+      <span class="exp-period">공동 프로젝트</span>
+    </div>
+    <div class="exp-role">AI 음성인식 기반 회의록 자동 생성 서비스 (STT)</div>
+    <ul class="bullets">
+      <li>초기 기획 단계부터 디자인 협업, 시장 출시 준비까지 참여</li>
+      <li>B2B 고객 커뮤니케이션, 온보딩 지원, 초기 서비스 운영 담당</li>
+      <li>사용자 피드백과 운영 데이터를 기반으로 기능 개선 방향 제안 및 반영</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 주요 성과 -->
+<div class="section">
+  <div class="section-title">주요 성과</div>
+  <ul class="bullets">
+    <li>B2C 제품 매출을 52억(2023)에서 72억(2024)으로 성장. ROAS 650% 달성, 2년간 리드 수 14배 증가</li>
+    <li>UTM 기반 유입 경로 추적 설계, Meta 광고 소재 A/B 테스트, 숨은 랜딩페이지 전환 실험 운영 — 분 단위 유입 데이터 기반 최적화</li>
+    <li>Notion + Make + GPT 기반 콘텐츠·리드 자동화 파이프라인 구축. 마케팅 리서치 시간 약 80% 절감</li>
+    <li>리드 관리 시스템 설계: 문의폼 → Notion CRM → 알림 → 미응대 리드 자동 팔로업</li>
+    <li>2025년 B2C Growth 시스템 전체 안정화 완료 후 B2B 운영으로 확장 착수</li>
+  </ul>
+</div>
+
+<!-- 실무 기반 AI 분석 및 실행 사례 -->
+<div class="section">
+  <div class="section-title">실무 기반 AI 분석 및 실행 사례</div>
+  <p class="init-intro">
+    실제 업무 적용을 전제로 준비한 초기 분석, 운영 가설, 실행 프레임워크입니다. 포트폴리오 전시가 아닌 실무 투입을 위한 작업입니다.
+  </p>
+
+  <div class="init-block">
+    <div class="init-name">헬스케어 리텐션 분석 (AI 건강이)</div>
+    <p class="init-desc">
+      헬스케어 앱 도메인에 대한 사전 비즈니스 분석. 경쟁 서비스 20,000페이지를 크롤링하여 구조적 리텐션 문제를 식별. AI 기반 일일 건강 알림, 챗봇 참여, 아침/저녁 건강 루프에 대한 초기 가설 정리. Braze CRM 연동 시나리오와 사용자 플로우 프레임워크를 실행 가능한 출발점으로 설계.
+    </p>
+  </div>
+
+  <div class="init-block">
+    <div class="init-name">WebScout — 서비스 구조 분석 도구 <a href="https://github.com/dalgoms/webscout-next">github</a></div>
+    <p class="init-desc">
+      웹사이트 아키텍처 평가, 숨은 페이지 탐지, SEO 콘텐츠 클러스터 매핑을 위한 내부 분석 도구. 경쟁사 구조 파악과 유입 기회 식별에 실무 활용. (Next.js / Vercel)
+    </p>
+  </div>
+
+  <div class="init-block">
+    <div class="init-name">AI Process Playbook <a href="https://github.com/dalgoms/ai_process">github</a></div>
+    <p class="init-desc">
+      AI 기반 워크플로우 자동화를 위한 중앙 운영 허브. Notion 작업 등록 → GitHub Issue → GPT Codex → PR → CI → 배포까지 이어지는 파이프라인 설계. 재사용 가능한 자동화 아키텍처와 운영 플레이북 문서화.
+    </p>
+  </div>
+
+  <div class="init-block">
+    <div class="init-name">Business Automation System</div>
+    <p class="init-desc">
+      현재 운영 중인 실무 시스템. 리드 캡처(문의폼 → Make → Notion CRM → Telegram/Email), 스케줄 기반 팔로업 자동화, AI 보조 콘텐츠 초안 파이프라인, Telegram·Email·Slack·KakaoTalk·SMS 멀티채널 알림 연동.
+    </p>
+  </div>
+</div>
+
+<!-- 도구 -->
+<div class="section">
+  <div class="section-title">도구</div>
+  <p class="tools-line">
+    <strong>AI:</strong> GPT, Claude, Cursor &nbsp;&nbsp;
+    <strong>자동화:</strong> Make, Notion API, GitHub Actions &nbsp;&nbsp;
+    <strong>개발:</strong> Next.js, Node.js, Vercel, TypeScript &nbsp;&nbsp;
+    <strong>디자인:</strong> Figma
+  </p>
+</div>
+
+<!-- 업무 스타일 -->
+<div class="section">
+  <div class="section-title">업무 스타일</div>
+  <ul class="style-list">
+    <li>업무 시작 전에 문제를 실행 가능한 계획과 초기 분석으로 구조화</li>
+    <li>AI 도구를 활용하여 리서치, 프레이밍, 초기 단계 운영 기획을 가속</li>
+    <li>장식적인 결과물보다 작동하는 프로토타입과 실용적 프레임워크를 선호</li>
+  </ul>
+</div>
+
+<!-- 학력 -->
+<div class="footer">
+  아주대학교 — 미디어학과 학사
+</div>
+
+</body>
+</html>
