@@ -1,0 +1,12 @@
+{
+  "webscout-next": {
+    "repo": "dalgoms/webscout-next",
+    "branch": "master",
+    "framework": "nextjs"
+  },
+  "ai_process": {
+    "repo": "dalgoms/ai_process",
+    "branch": "master",
+    "framework": "docs"
+  }
+}

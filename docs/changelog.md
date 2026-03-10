@@ -1,6 +1,20 @@
 # Changelog - 구축 이력
 
-## 2026-03-10
+## 2026-03-10 (Multi-Project Upgrade)
+
+### Phase 4: 멀티 프로젝트 확장
+- `notion-sync.yml`을 `webscout-next`에서 `ai_process`로 이동 (중앙 오케스트레이터)
+- `config/projects.json` 프로젝트 라우팅 설정 추가
+- Notion Project 필드 → 자동 레포 라우팅 로직 구현
+- `GH_PAT` (Fine-grained PAT) 도입 → cross-repo Issue/workflow 접근
+- `codex.yml` 프롬프트 범용화 (`.codex-context` 파일 기반)
+- `ai_process` 레포에 `codex.yml`, `deploy-notify.yml` 추가
+- `ai_process` 레포에 `ai-task` 라벨 생성
+- README, architecture, workflows 문서 멀티 프로젝트 구조로 업데이트
+
+---
+
+## 2026-03-10 (Initial Build)
 
 ### Phase 0: 기반 구축
 - AnyDesk 원격 접속 설정 (PC ↔ Mobile)

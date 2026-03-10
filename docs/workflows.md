@@ -3,40 +3,57 @@
 ## 전체 워크플로우 맵
 
 ```
-notion-sync.yml ──▶ codex.yml ──▶ ci.yml
-     │                  │            │
-     ▼                  ▼            ▼
-deploy-notify.yml  deploy-notify.yml  deploy-notify.yml
-  (Telegram)         (Telegram)        (Telegram)
+                    ai_process 레포
+                    ┌────────────────────┐
+                    │ notion-sync.yml    │
+                    │ (중앙 오케스트레이터)│
+                    └───────┬────────────┘
+                            │ Project 라우팅
+               ┌────────────┼────────────┐
+               ▼            ▼            ▼
+          webscout-next  ai_process   new-project
+          ┌──────────┐  ┌──────────┐  ┌──────────┐
+          │codex.yml │  │codex.yml │  │codex.yml │
+          │ci.yml    │  │notify.yml│  │ci.yml    │
+          │notify.yml│  └──────────┘  │notify.yml│
+          └──────────┘                └──────────┘
 ```
 
 ---
 
-## 1. notion-sync.yml
+## 1. notion-sync.yml (ai_process 레포)
 
-**역할**: Notion Work Inbox를 5분마다 확인하고, 새 작업을 GitHub Issue로 변환
+**역할**: Notion Work Inbox를 5분마다 확인하고, Project 필드 기반으로 올바른 레포에 Issue를 생성
 
 | 항목 | 값 |
 |------|-----|
+| 위치 | `ai_process/.github/workflows/notion-sync.yml` |
 | 트리거 | `schedule: */5 * * * *`, `workflow_dispatch` |
-| 필요 시크릿 | `NOTION_TOKEN`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` |
+| 필요 시크릿 | `GH_PAT`, `NOTION_TOKEN`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` |
 
 ### 동작 흐름
 
 ```
-1. Notion API로 DB 쿼리 (Processed = false 필터)
-2. 미처리 항목 발견 시:
-   a. GitHub Issue 생성 (ai-task 라벨)
-   b. Codex 워크플로우 dispatch (issue_number 전달)
-   c. Notion에 Processed = true 업데이트
-   d. Notion에 PR URL = Issue URL 기록
-   e. Telegram 알림 발송
-3. 미처리 항목 없으면 조용히 종료
+1. config/projects.json을 로드 (프로젝트 → 레포 매핑)
+2. Notion API로 DB 쿼리 (Processed = false 필터)
+3. 미처리 항목 발견 시:
+   a. Project 필드로 TARGET_REPO 결정
+   b. 매핑 없으면 Telegram으로 에러 알림 → skip
+   c. TARGET_REPO에 GitHub Issue 생성 (ai-task 라벨)
+   d. TARGET_REPO의 Codex 워크플로우 dispatch (issue_number 전달)
+   e. Notion에 Processed = true 업데이트
+   f. Notion에 PR URL = Issue URL 기록
+   g. Telegram 알림 발송 (레포 정보 포함)
+4. 미처리 항목 없으면 조용히 종료
 ```
 
 ### 중복 방지
 
 Issue body에 `notion:{page-id}`를 포함하고, 생성 전 동일 ID로 검색하여 중복 생성 방지
+
+### Cross-repo 접근
+
+`GITHUB_TOKEN`은 현재 레포만 접근 가능하므로, `GH_PAT` (Fine-grained PAT)를 사용하여 다른 레포에 Issue 생성 및 workflow dispatch를 수행
 
 ---
 

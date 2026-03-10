@@ -5,8 +5,19 @@
 ## Pipeline
 
 ```
-Notion 등록 → GitHub Issue 자동 생성 → GPT Codex 코드 수정 → PR 생성 → CI 빌드 검증 → Telegram 알림 → 수동 승인 → Vercel 배포
+Notion 등록 → ai_process가 프로젝트 식별 → 해당 레포에 Issue 생성 → GPT Codex 코드 수정 → PR 생성 → CI 검증 → Telegram 알림 → 수동 승인 → 배포
 ```
+
+## 멀티 프로젝트 지원
+
+하나의 Notion Work Inbox에서 여러 프로젝트를 관리합니다. **Project** 필드를 기반으로 자동 라우팅됩니다.
+
+| Project | Repository | 용도 |
+|---------|-----------|------|
+| `webscout-next` | [dalgoms/webscout-next](https://github.com/dalgoms/webscout-next) | Next.js 메인 서비스 |
+| `ai_process` | [dalgoms/ai_process](https://github.com/dalgoms/ai_process) | 자동화 문서 관리 |
+
+새 프로젝트를 추가하려면 `config/projects.json`에 항목을 추가하세요.
 
 ## 사용법
 
@@ -19,18 +30,19 @@ Notion 등록 → GitHub Issue 자동 생성 → GPT Codex 코드 수정 → PR 
 | **Goal** | 구체적인 목표 | `app/page.tsx에서 로그인 버튼 배경색을 #2563eb로 변경` |
 | **Target Files** | 수정 대상 파일 | `app/page.tsx` |
 | **Priority** | 우선순위 | `urgent`, `high`, `medium`, `low` |
-| **Project** | 프로젝트 | `webscout-next` |
+| **Project** | 프로젝트 | `webscout-next`, `ai_process` |
 
 ### 2. 자동으로 일어나는 일
 
-1. **5분 내** - notion-sync가 Notion을 확인하고 GitHub Issue 생성
-2. **~2분** - GPT Codex가 코드를 읽고 수정
-3. **즉시** - PR 생성 + CI 빌드 검증 시작
-4. **Telegram** - 각 단계마다 알림 수신
+1. **5분 내** - ai_process의 notion-sync가 Notion을 확인
+2. **즉시** - Project 필드에 맞는 레포에 GitHub Issue 생성
+3. **~2분** - 해당 레포의 GPT Codex가 코드를 수정
+4. **즉시** - PR 생성 + CI 빌드 검증 시작
+5. **Telegram** - 각 단계마다 알림 수신
 
 ### 3. 최종 승인
 
-GitHub에서 PR을 확인하고 **Merge** 클릭 → Vercel 자동 배포
+GitHub에서 PR을 확인하고 **Merge** 클릭 → 자동 배포
 
 ## 프롬프트 팁
 
@@ -53,7 +65,7 @@ app/analyze/page.tsx에서 "분석 시작" 버튼의 텍스트를 "Start Analysi
 
 ### 방법 1: Notion (모바일/PC)
 
-Work Inbox에 새 행 추가 → 5분 내 자동 실행
+Work Inbox에 새 행 추가 → Project 필드 선택 → 5분 내 자동 실행
 
 ### 방법 2: Cursor에서 대화로
 
@@ -70,47 +82,78 @@ Notion에 등록해줘: [제목], [변경사항], [파일 경로]
 
 ### 방법 3: GitHub Issue 직접 생성
 
-Issue를 만들 때 `ai-task` 라벨만 붙이면 Codex가 자동 실행
+해당 프로젝트 레포에서 Issue를 만들 때 `ai-task` 라벨만 붙이면 Codex가 자동 실행
 
 ### 방법 4: 재시도
 
 Issue에 `@codex` 코멘트를 달면 다시 실행
 
-## Connected Services
-
-| 서비스 | 역할 |
-|--------|------|
-| [Notion Work Inbox](https://www.notion.so/7f471e8dcba44e878b96cfae8d0de083) | 작업 등록 |
-| [webscout-next](https://github.com/dalgoms/webscout-next) | 메인 프로젝트 |
-| [Vercel](https://webscout-next-8veo.vercel.app) | 배포 |
-| Telegram (@seyounginboxbot) | 알림 |
-
 ## Architecture
 
 ```
-┌─────────┐     ┌──────────┐     ┌───────────┐     ┌──────┐     ┌──────────┐
-│  Notion  │────▶│  GitHub   │────▶│ GPT Codex │────▶│  PR  │────▶│ CI Build │
-│  Inbox   │     │  Issue    │     │  Agent    │     │      │     │  Check   │
-└─────────┘     └──────────┘     └───────────┘     └──────┘     └──────────┘
-     │                                                                │
-     │                                                          ┌─────▼─────┐
-     │               ┌──────────┐     ┌────────┐               │  Telegram  │
-     │               │  Vercel  │◀────│ Merge  │◀──── 사람 승인 │  Notify   │
-     │               │  Deploy  │     │        │               └───────────┘
-     │               └──────────┘     └────────┘
-     │                    │
-     └────────────────────┘── Telegram 배포 알림
+┌──────────┐
+│  Notion   │ (Work Inbox - 모든 프로젝트 통합)
+│  Inbox    │
+└─────┬────┘
+      │ 5분 cron
+      ▼
+┌──────────────────────────────────┐
+│  ai_process / notion-sync.yml    │ (중앙 오케스트레이터)
+│  config/projects.json 참조       │
+└─────┬──────────────┬─────────────┘
+      │              │
+      ▼              ▼
+┌──────────┐   ┌──────────┐
+│ webscout │   │ ai_proc  │   ← 프로젝트별 레포
+│ -next    │   │ ess      │
+├──────────┤   ├──────────┤
+│ codex    │   │ codex    │   ← 각 레포의 워크플로우
+│ ci       │   │ notify   │
+│ notify   │   └──────────┘
+└────┬─────┘
+     │ PR merge
+     ▼
+┌──────────┐   ┌──────────┐
+│  Vercel  │   │ Telegram │
+│  Deploy  │   │ 알림     │
+└──────────┘   └──────────┘
 ```
 
 ## Workflows
 
+### 중앙 (ai_process 레포)
+
 | 파일 | 트리거 | 동작 |
 |------|--------|------|
-| `notion-sync.yml` | 5분 cron | Notion → Issue 생성 → Codex 트리거 |
+| `notion-sync.yml` | 5분 cron | Notion 폴링 → Project별 레포 라우팅 → Issue 생성 → Codex 트리거 |
+
+### 프로젝트별 (각 레포)
+
+| 파일 | 트리거 | 동작 |
+|------|--------|------|
 | `codex.yml` | Issue/comment/dispatch | GPT Codex 실행 → PR 생성 |
-| `ci.yml` | PR | npm run build 검증 |
+| `ci.yml` | PR | 빌드 검증 (프로젝트에 따라 다름) |
 | `deploy-notify.yml` | push/workflow_run | Telegram 알림 |
-| `auto-merge.yml` | 비활성 | 향후 L4 자동화용 |
+
+## 프로젝트 추가 방법
+
+1. GitHub 레포 생성
+2. `config/projects.json`에 항목 추가
+3. PAT의 Repository access에 새 레포 추가
+4. 새 레포에 `codex.yml`, `ci.yml`, `deploy-notify.yml` 복사
+5. 새 레포에 Secrets 등록
+6. `.codex-context` 파일 생성 (프로젝트 설명)
+7. Notion Work Inbox의 Project 셀렉트에 새 이름 추가
+
+## Connected Services
+
+| 서비스 | 역할 |
+|--------|------|
+| [Notion Work Inbox](https://www.notion.so/7f471e8dcba44e878b96cfae8d0de083) | 작업 등록 (모든 프로젝트 통합) |
+| [webscout-next](https://github.com/dalgoms/webscout-next) | Next.js 서비스 |
+| [ai_process](https://github.com/dalgoms/ai_process) | 중앙 오케스트레이터 + 문서 |
+| [Vercel](https://webscout-next-8veo.vercel.app) | 배포 |
+| Telegram (@seyounginboxbot) | 알림 |
 
 ## 상세 문서
 

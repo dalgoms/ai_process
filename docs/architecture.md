@@ -17,10 +17,11 @@
 │                     ORCHESTRATOR LAYER                               │
 │                                                                     │
 │  ┌──────────────────────────────────────────────────────────────┐   │
-│  │  notion-sync.yml (GitHub Actions, 5분 cron)                  │   │
+│  │  ai_process/notion-sync.yml (중앙 오케스트레이터)             │   │
 │  │  - Notion DB 폴링 (Processed = false)                        │   │
-│  │  - GitHub Issue 자동 생성 (ai-task 라벨)                      │   │
-│  │  - Codex workflow_dispatch 호출                               │   │
+│  │  - config/projects.json으로 Project → 레포 라우팅             │   │
+│  │  - 해당 레포에 GitHub Issue 생성 (ai-task 라벨)               │   │
+│  │  - 해당 레포의 Codex workflow_dispatch 호출                   │   │
 │  │  - Notion에 Processed 체크 + PR URL 기록                     │   │
 │  │  - Telegram 알림 발송                                         │   │
 │  └──────────────────────────────────────────────────────────────┘   │
@@ -154,15 +155,39 @@
 | Framework | Next.js |
 | Remote Access | AnyDesk |
 
-## Secrets (GitHub Repository)
+## Secrets
+
+### ai_process (중앙 오케스트레이터)
+
+| Secret | 용도 |
+|--------|------|
+| `GH_PAT` | Cross-repo Issue 생성 + workflow 트리거 (Fine-grained PAT) |
+| `OPENAI_API_KEY` | GPT Codex API 호출 |
+| `TELEGRAM_BOT_TOKEN` | Telegram Bot 메시지 발송 |
+| `TELEGRAM_CHAT_ID` | Telegram 수신 대상 |
+| `NOTION_TOKEN` | Notion API 접근 (Integration) |
+
+### 각 프로젝트 레포
 
 | Secret | 용도 |
 |--------|------|
 | `OPENAI_API_KEY` | GPT Codex API 호출 |
 | `TELEGRAM_BOT_TOKEN` | Telegram Bot 메시지 발송 |
 | `TELEGRAM_CHAT_ID` | Telegram 수신 대상 |
-| `NOTION_TOKEN` | Notion API 접근 (Integration) |
 | `GITHUB_TOKEN` | 자동 제공 - Issue/PR 생성 |
+
+## 프로젝트 라우팅 (config/projects.json)
+
+Notion의 Project 필드 값이 key가 되어 해당 레포로 자동 라우팅됩니다.
+
+```json
+{
+  "webscout-next": { "repo": "dalgoms/webscout-next", "branch": "master", "framework": "nextjs" },
+  "ai_process": { "repo": "dalgoms/ai_process", "branch": "master", "framework": "docs" }
+}
+```
+
+새 프로젝트 추가 시 이 파일에 항목만 추가하면 됩니다.
 
 ## Notion DB Schema (Work Inbox)
 

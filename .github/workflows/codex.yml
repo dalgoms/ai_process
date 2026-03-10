@@ -1,0 +1,262 @@
+name: GPT Codex Agent
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Issue number to process"
+        required: true
+        type: string
+
+jobs:
+  codex:
+    if: |
+      (github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'ai-task')) ||
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@codex')) ||
+      (github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Resolve issue info
+        id: issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            NUM="${{ inputs.issue_number }}"
+          else
+            NUM="${{ github.event.issue.number }}"
+          fi
+          echo "number=$NUM" >> $GITHUB_OUTPUT
+
+          ISSUE_JSON=$(gh issue view "$NUM" --json title,body)
+          TITLE=$(echo "$ISSUE_JSON" | jq -r '.title')
+          BODY=$(echo "$ISSUE_JSON" | jq -r '.body')
+
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+
+          echo "body<<ISSUE_EOF" >> $GITHUB_OUTPUT
+          echo "$BODY" >> $GITHUB_OUTPUT
+          echo "ISSUE_EOF" >> $GITHUB_OUTPUT
+
+      - name: Read project context
+        id: context
+        run: |
+          if [ -f .codex-context ]; then
+            CTX=$(cat .codex-context)
+          else
+            CTX="You are working on a software project."
+          fi
+          echo "project_context<<CTX_EOF" >> $GITHUB_OUTPUT
+          echo "$CTX" >> $GITHUB_OUTPUT
+          echo "CTX_EOF" >> $GITHUB_OUTPUT
+
+      - name: Run Codex
+        id: codex
+        uses: openai/codex-action@v1
+        continue-on-error: true
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          sandbox: "workspace-write"
+          codex-args: "--full-auto"
+          prompt: |
+            ${{ steps.context.outputs.project_context }}
+
+            ## Task
+            Read the GitHub issue below and implement the requested changes.
+
+            ## Issue Title
+            ${{ steps.issue.outputs.title }}
+
+            ## Issue Body
+            ${{ steps.issue.outputs.body }}
+
+            ## Rules
+            - Do not refactor unrelated files
+            - Make the safest minimal change first
+            - After changes, summarize modified files and possible side effects
+
+      - name: Comment failure on Issue
+        if: steps.codex.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUM: ${{ steps.issue.outputs.number }}
+        run: |
+          gh issue comment "$ISSUE_NUM" \
+            --body "## Codex Result: FAILED
+
+          | Field | Value |
+          |-------|-------|
+          | Status | Failed |
+          | Issue | #${ISSUE_NUM} |
+          | Error | Codex exited with non-zero code |
+          | Run | [View logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}) |
+
+          ### Next Action
+          1. Run 로그에서 에러 원인을 확인하세요
+          2. Issue 설명을 더 구체적으로 수정하세요
+          3. \`@codex\` 코멘트로 재시도하세요"
+
+      - name: Telegram alert on failure
+        if: steps.codex.outcome == 'failure'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ISSUE_TITLE: ${{ steps.issue.outputs.title }}
+          ISSUE_NUM: ${{ steps.issue.outputs.number }}
+        run: |
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+          TEXT="[CODEX FAILED] #${ISSUE_NUM}
+          Issue: ${ISSUE_TITLE}
+          Repo: ${{ github.repository }}
+          Run: ${RUN_URL}
+          Action: Check logs and retry with @codex"
+
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="${TEXT}"
+
+      - name: Exit on failure
+        if: steps.codex.outcome == 'failure'
+        run: exit 1
+
+      - name: Check for changes
+        id: check-changes
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            CHANGED_FILES=$(git diff --name-only)
+            echo "changed_files<<EOF" >> $GITHUB_OUTPUT
+            echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            FILE_COUNT=$(echo "$CHANGED_FILES" | wc -l)
+            echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Comment no changes on Issue
+        if: steps.check-changes.outputs.has_changes == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUM: ${{ steps.issue.outputs.number }}
+        run: |
+          gh issue comment "$ISSUE_NUM" \
+            --body "## Codex Result: NO CHANGES
+
+          | Field | Value |
+          |-------|-------|
+          | Status | Completed (no changes) |
+          | Issue | #${ISSUE_NUM} |
+          | Run | [View logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}) |
+
+          ### Next Action
+          Codex analyzed the issue but determined no code changes were needed.
+          - Rewrite the issue with more specific instructions
+          - Specify exact file paths and desired behavior
+          - Retry with \`@codex\`"
+
+      - name: Create PR
+        if: steps.check-changes.outputs.has_changes == 'true'
+        id: create-pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUM: ${{ steps.issue.outputs.number }}
+          ISSUE_TITLE: ${{ steps.issue.outputs.title }}
+        run: |
+          BRANCH="codex/issue-${ISSUE_NUM}"
+
+          EXISTING_BRANCH=$(git ls-remote --heads origin "$BRANCH" | wc -l)
+          if [ "$EXISTING_BRANCH" != "0" ]; then
+            BRANCH="codex/issue-${ISSUE_NUM}-$(date +%s)"
+          fi
+
+          git checkout -b "$BRANCH"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: ${ISSUE_TITLE}"
+          git push origin "$BRANCH"
+
+          DIFF_STAT=$(git diff --stat HEAD~1)
+
+          PR_URL=$(gh pr create \
+            --title "feat: ${ISSUE_TITLE}" \
+            --body "## Auto-generated by GPT Codex Agent
+
+          Closes #${ISSUE_NUM}
+
+          ### Changed Files
+          \`\`\`
+          ${DIFF_STAT}
+          \`\`\`
+
+          ---
+          > This PR was auto-generated by AI. Review before merging." \
+            --base master \
+            --head "$BRANCH")
+
+          echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
+
+      - name: Comment success on Issue
+        if: steps.check-changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUM: ${{ steps.issue.outputs.number }}
+        run: |
+          PR_URL="${{ steps.create-pr.outputs.pr_url }}"
+          CHANGED="${{ steps.check-changes.outputs.changed_files }}"
+          FILE_COUNT="${{ steps.check-changes.outputs.file_count }}"
+
+          gh issue comment "$ISSUE_NUM" \
+            --body "## Codex Result: SUCCESS
+
+          | Field | Value |
+          |-------|-------|
+          | Status | Completed |
+          | Issue | #${ISSUE_NUM} |
+          | PR | ${PR_URL} |
+          | Files changed | ${FILE_COUNT} |
+          | Run | [View logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}) |
+
+          ### Changed Files
+          \`\`\`
+          ${CHANGED}
+          \`\`\`
+
+          ### Next Action
+          1. Review the PR: ${PR_URL}
+          2. If changes look good, merge the PR"
+
+      - name: Telegram alert on success
+        if: steps.check-changes.outputs.has_changes == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ISSUE_TITLE: ${{ steps.issue.outputs.title }}
+          ISSUE_NUM: ${{ steps.issue.outputs.number }}
+        run: |
+          PR_URL="${{ steps.create-pr.outputs.pr_url }}"
+          FILE_COUNT="${{ steps.check-changes.outputs.file_count }}"
+
+          TEXT="[CODEX SUCCESS] #${ISSUE_NUM}
+          Issue: ${ISSUE_TITLE}
+          Repo: ${{ github.repository }}
+          Files: ${FILE_COUNT} changed
+          PR: ${PR_URL}
+          Action: Review and merge PR"
+
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="${TEXT}"
