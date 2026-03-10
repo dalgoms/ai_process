@@ -214,3 +214,81 @@ AI가 초안을 작성했습니다. 검토해주세요.
 ```json
 { "success": true, "message": "Contact received" }
 ```
+
+---
+
+## 자동 응답 이메일 설정
+
+리드 캡처 시나리오에 Gmail 모듈을 추가하면 문의자에게 자동 확인 이메일을 발송할 수 있습니다.
+
+### Make.com 설정
+
+기존 시나리오 (Webhook → Notion → Telegram)에 모듈 추가:
+
+```
+Webhook → Notion → Telegram
+                 → Gmail (자동 응답)   ← 병렬 추가
+```
+
+Telegram 모듈 뒤에 `+` → **Gmail** → **Send an Email** 선택
+
+### Gmail 모듈 설정
+
+| 필드 | 값 |
+|------|-----|
+| To | webhook의 `email` (패널에서 클릭) |
+| Subject | `문의가 접수되었습니다 - [회사명]` |
+| Content Type | HTML |
+| Content | 아래 템플릿 |
+
+### 이메일 템플릿
+
+```html
+<div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+  <h2>문의가 접수되었습니다</h2>
+  <p>안녕하세요, {{name}}님.</p>
+  <p>문의 내용을 확인했습니다. 담당자가 영업일 기준 1일 이내에 연락드리겠습니다.</p>
+  <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
+  <p style="color: #666; font-size: 14px;">
+    <strong>접수 내용</strong><br />
+    이름: {{name}}<br />
+    이메일: {{email}}<br />
+    메시지: {{message}}
+  </p>
+  <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
+  <p style="color: #999; font-size: 12px;">본 메일은 자동 발송되었습니다.</p>
+</div>
+```
+
+`{{name}}`, `{{email}}`, `{{message}}`는 Make.com 패널에서 webhook 변수를 클릭하여 삽입하세요.
+
+---
+
+## 보안 설정 (Webhook API Key)
+
+외부에서 webhook URL을 악용하는 것을 방지하기 위해 API Key 인증을 사용할 수 있습니다.
+
+### Vercel 환경변수
+
+```
+WEBHOOK_API_KEY=your-secret-key-here
+ALLOWED_ORIGINS=https://webscout-next-8veo.vercel.app,https://timbel.com
+```
+
+### API Key 포함 호출
+
+```
+POST /api/webhook/contact
+Header: X-API-Key: your-secret-key-here
+```
+
+또는 쿼리 파라미터:
+```
+POST /api/webhook/contact?key=your-secret-key-here
+```
+
+API Key가 환경변수에 설정되지 않으면 인증을 건너뜁니다 (개발 편의).
+
+### Rate Limiting
+
+IP당 분당 10건으로 제한됩니다. 초과 시 `429 Too Many Requests` 응답.

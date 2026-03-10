@@ -1,5 +1,21 @@
 # Changelog - 구축 이력
 
+## 2026-03-10 (Security Upgrade)
+
+### Phase 6: 보안 + 안정성 강화
+- Webhook API Key 인증 추가 (`X-API-Key` 헤더 또는 `?key=` 쿼리)
+- IP 기반 Rate Limiting (분당 10건)
+- CORS 화이트리스트 (`ALLOWED_ORIGINS` 환경변수)
+- 이메일 형식 검증 + HTML 태그 제거 (XSS 방지)
+- `type`, `urgency` 필드 허용값 제한 (인젝션 방지)
+- Make.com 전달 실패 시 자동 재시도 (최대 3회, 백오프)
+- 에러 로깅 (`console.error` → Vercel Logs)
+- 공통 유틸리티 `lib/webhook-utils.ts` 분리
+- 자동 응답 이메일 가이드 추가 (Make.com Gmail 모듈)
+- make-scenarios.md에 보안 설정 문서 추가
+
+---
+
 ## 2026-03-10 (Business Automation)
 
 ### Phase 5: 비즈니스 자동화 기반
