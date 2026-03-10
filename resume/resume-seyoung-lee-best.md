@@ -26,7 +26,7 @@ Growth marketing lead with 10+ years of hands-on experience in designing and ope
 
 2015.07 — Present
 
-Led the full scope of marketing strategy, execution, website operations, and automation architecture at a voice-data technology company.
+Led the full scope of marketing strategy, execution, website operations, and automation architecture at an AI voice-recording platform company.
 
 - Planned and executed B2C performance marketing campaigns across Meta, Google, and Naver (annual ad budgets KRW 800M–1.4B). Grew revenue from KRW 5.2B to 7.2B, achieving 650% ROAS; scaled lead volume 14x over two years
 - Designed UTM-based attribution tracking, ran Meta ad creative A/B tests, and operated hidden landing page conversion experiments for data-driven optimization
