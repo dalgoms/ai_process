@@ -46,7 +46,8 @@ Mermaid 기반 아키텍처 다이어그램.
 
 | 문서 | 내용 |
 |------|------|
-| [Seyoung Lee](resume/resume-seyoung-lee.md) | AI Automation Architect |
+| [Seyoung Lee (EN)](resume/resume-seyoung-lee.md) | AI Automation Architect |
+| [이세영 (KO)](resume/resume-seyoung-lee-ko.md) | Growth Marketing & AI Automation |
 
 ---
 

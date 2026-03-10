@@ -21,6 +21,30 @@ Non-traditional background with strong execution — from idea to production in 
 
 ---
 
+## Experience
+
+### timbel
+
+**Head of Marketing** (Growth Marketing & Product Strategy)
+Jul 2017 – Present
+
+Led B2B/B2C marketing strategy for stenography services and voice recording market. Built lead generation funnels and drove revenue growth through performance marketing and content marketing.
+
+- Built organic lead acquisition channels via SEO and content marketing for stenography services
+- Improved inquiry conversion rates through landing page UX and messaging optimization
+- Contributed to revenue growth through integrated performance and content marketing operations
+- Introduced AI-powered marketing automation (Cursor, GPT, Notion, Make) for content production, data collection, and lead management
+
+Expanded domain expertise from voice-data services to AI speech technology (STT) and data-driven automation.
+
+---
+
+## Education
+
+Ajou University — B.A. in Media Studies
+
+---
+
 ## Projects
 
 ### AI Process Playbook
