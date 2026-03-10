@@ -29,20 +29,25 @@
     word-break: keep-all;
   }
 
+  /* 3단계 색상: #111(강조) → #333(본문) → #777(보조) */
+
   .header { margin-bottom: 22px; }
   .name {
     font-size: 24pt;
     font-weight: 700;
+    color: #111;
     letter-spacing: -0.5px;
   }
   .title {
     font-size: 12pt;
     font-weight: 400;
+    color: #333;
     margin-top: 3px;
     margin-bottom: 10px;
   }
   .contact {
     font-size: 10pt;
+    color: #777;
     line-height: 1.7;
   }
 
@@ -50,6 +55,7 @@
   .section-title {
     font-size: 12pt;
     font-weight: 700;
+    color: #111;
     margin-bottom: 8px;
     padding-bottom: 4px;
     border-bottom: 1px solid #ccc;
@@ -57,15 +63,18 @@
 
   .summary {
     font-size: 11pt;
+    color: #333;
     line-height: 1.75;
   }
 
   .competencies {
     font-size: 11pt;
+    color: #333;
     line-height: 1.8;
   }
   .competencies strong {
     font-weight: 600;
+    color: #111;
   }
 
   .exp-block { margin-bottom: 16px; }
@@ -78,18 +87,22 @@
   .exp-company {
     font-size: 11pt;
     font-weight: 600;
+    color: #111;
   }
   .exp-period {
     font-size: 10pt;
     font-weight: 400;
+    color: #777;
     white-space: nowrap;
   }
   .exp-role {
     font-size: 10pt;
+    color: #777;
     margin-bottom: 4px;
   }
   .exp-summary {
     font-size: 10pt;
+    color: #333;
     margin-bottom: 6px;
     line-height: 1.65;
   }
@@ -100,6 +113,7 @@
   }
   ul.bullets li {
     font-size: 10pt;
+    color: #333;
     padding-left: 14px;
     position: relative;
     margin-bottom: 4px;
@@ -109,24 +123,32 @@
     content: '–';
     position: absolute;
     left: 0;
+    color: #777;
+  }
+  ul.bullets li strong {
+    color: #111;
   }
 
   .sub-section-title {
     font-size: 10pt;
     font-weight: 600;
+    color: #111;
     margin-bottom: 6px;
   }
   .sub-section-intro {
     font-size: 10pt;
+    color: #777;
     margin-bottom: 8px;
   }
 
   .tools-line {
     font-size: 10pt;
+    color: #333;
     line-height: 1.8;
   }
   .tools-line strong {
     font-weight: 600;
+    color: #111;
   }
 
   @media print { body { padding: 0; } }
