@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이세영 — AI Growth & Product Systems Builder</title>
+<style>
+  @page { size: A4; margin: 14mm 16mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Pretendard', -apple-system, 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    font-size: 9pt;
+    line-height: 1.5;
+    color: #1a1a1a;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 14mm 16mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  h1 { font-size: 20pt; font-weight: 800; margin-bottom: 1px; letter-spacing: -0.5px; }
+  .headline { font-size: 10pt; font-weight: 600; color: #374151; margin-bottom: 6px; }
+  .summary { font-size: 8.5pt; color: #374151; line-height: 1.55; margin-bottom: 10px; }
+
+  hr { border: none; border-top: 1px solid #d1d5db; margin: 8px 0; }
+  .hr-bold { border-top: 2px solid #111827; }
+
+  h2 {
+    font-size: 10pt; font-weight: 700; color: #111827;
+    margin-bottom: 5px; padding-bottom: 2px;
+    border-bottom: 2px solid #111827;
+  }
+  .section { margin-bottom: 9px; }
+
+  /* Skills */
+  .skills-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+  .skill-cat { font-size: 8.5pt; font-weight: 700; color: #4b5563; margin-bottom: 1px; }
+  .skill-list { font-size: 8pt; color: #374151; line-height: 1.45; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin: 3px 0 5px; }
+  th {
+    text-align: left; font-weight: 600; padding: 2.5px 6px;
+    background: #f3f4f6; border-bottom: 1px solid #d1d5db;
+    font-size: 8pt; color: #374151;
+  }
+  td { padding: 2.5px 6px; border-bottom: 1px solid #e5e7eb; }
+  .num-highlight { color: #1d4ed8; font-weight: 700; }
+
+  /* Lists */
+  ul { padding-left: 14px; margin: 1px 0; }
+  li { margin-bottom: 0.5px; font-size: 8.5pt; }
+
+  /* Achievement blocks */
+  .ach-label { font-weight: 700; font-size: 9pt; margin-top: 5px; margin-bottom: 2px; }
+  .ach-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+  .ach-mini-label { font-weight: 700; font-size: 8.5pt; margin-bottom: 1px; }
+  .ach-mini-desc { font-size: 8pt; color: #374151; }
+
+  /* Projects */
+  .proj { margin-bottom: 6px; }
+  .proj-title { font-weight: 700; font-size: 9pt; }
+  .proj-link { font-size: 7.5pt; color: #6b7280; text-decoration: none; }
+  .proj-desc { font-size: 8pt; color: #6b7280; margin-bottom: 1px; }
+  .proj ul { font-size: 8pt; }
+  .proj li { margin-bottom: 0; }
+
+  /* Experience */
+  .exp-header { font-weight: 700; font-size: 9pt; }
+  .exp-role { font-size: 8pt; color: #6b7280; }
+  .exp-body { font-size: 8pt; color: #374151; margin: 2px 0; line-height: 1.45; }
+
+  /* Tools */
+  .tools-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; font-size: 8pt; }
+  .tools-grid dt { font-weight: 700; color: #4b5563; }
+  .tools-grid dd { color: #374151; margin: 0 0 2px 0; }
+
+  /* How I Work */
+  .how { font-size: 8pt; color: #374151; }
+  .how strong { color: #111827; }
+
+  /* Footer */
+  .footer-edu { font-size: 8pt; color: #6b7280; }
+  .footer-contact { font-size: 8pt; color: #374151; }
+  .footer-contact a { color: #1d4ed8; text-decoration: none; }
+  .closing { font-size: 8.5pt; color: #6b7280; font-style: italic; margin-top: 4px; }
+
+  @media print { body { padding: 0; } }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<h1>이세영</h1>
+<div class="headline">AI Growth & Product Systems Builder</div>
+<p class="summary">
+  사용자 유입 → 전환 → 리텐션까지 이어지는 Growth 구조를 설계하고 직접 운영해왔습니다.
+  퍼포먼스 마케팅으로 광고비 8억 → 매출 52억을 만들었고, 3년간 리드 수를 14배 성장시켰습니다.
+  GPT·Make·Notion을 연결한 엔드투엔드 자동화 파이프라인을 직접 구축하여 마케팅 운영을 시스템화하고 있으며,
+  서비스 구조를 분석해 AI 헬스케어 MVP를 설계한 경험이 있습니다.
+</p>
+
+<!-- Core Skills -->
+<div class="section">
+  <h2>Core Skills</h2>
+  <div class="skills-row">
+    <div>
+      <div class="skill-cat">Growth</div>
+      <div class="skill-list">Acquisition Strategy · Conversion Optimization · Retention Design · SEO · Experimentation</div>
+    </div>
+    <div>
+      <div class="skill-cat">AI & Automation</div>
+      <div class="skill-list">Workflow Automation · AI-assisted Operations · No-Code/Low-Code · Data-driven Growth</div>
+    </div>
+    <div>
+      <div class="skill-cat">Product</div>
+      <div class="skill-list">Product Analytics · User Flow Design · MVP Prototyping · Messaging · Documentation</div>
+    </div>
+  </div>
+</div>
+
+<!-- Key Achievements -->
+<div class="section">
+  <h2>Key Achievements</h2>
+
+  <div class="ach-label">B2B 제품 Growth 운영 — 속기 키보드</div>
+  <table>
+    <thead><tr><th>연도</th><th>광고비</th><th>매출</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td>2023</td><td>8억</td><td class="num-highlight">52억</td><td>ROAS 650%</td></tr>
+      <tr><td>2024</td><td>14억</td><td class="num-highlight">72억</td><td>리드 볼륨 확대기</td></tr>
+      <tr><td>2025</td><td>16억</td><td>52억</td><td>AI 급성장에 따른 직업 선호도 변화 영향</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:8.5pt;">3년간 리드 수 <strong>14배 증가</strong></p>
+
+  <div class="ach-label">실험 기반 Growth 접근 방식</div>
+  <ul>
+    <li>UTM 코드 기반 유입 경로 추적 구조 설계</li>
+    <li>Meta 광고 소재 A/B 테스트 운영</li>
+    <li>숨은 랜딩페이지 제작 및 전환 실험</li>
+    <li>분 단위 유입 데이터 분석을 통한 소재·랜딩페이지 최적화</li>
+  </ul>
+
+  <div class="ach-row">
+    <div>
+      <div class="ach-mini-label">자동화 파이프라인 구축</div>
+      <div class="ach-mini-desc">Notion + Make + GPT 기반 콘텐츠 수집·분석·알림 자동화 → 리서치 시간 약 80% 절감</div>
+    </div>
+    <div>
+      <div class="ach-mini-label">리드 관리 시스템 설계</div>
+      <div class="ach-mini-desc">문의폼 → CRM → 알림 → 미응대 자동 리마인더 → 리드 누락 방지, 응대 속도 개선</div>
+    </div>
+  </div>
+</div>
+
+<!-- Projects -->
+<div class="section">
+  <h2>Projects</h2>
+
+  <div class="proj">
+    <span class="proj-title">AI Process Playbook</span>
+    <a class="proj-link" href="https://github.com/dalgoms/ai_process"> github.com/dalgoms/ai_process</a>
+    <div class="proj-desc">AI 기반 업무 자동화 전략을 정리한 중앙 자동화 허브</div>
+    <ul>
+      <li>Notion → GitHub Issue → GPT Codex → PR → CI → Deploy 파이프라인 설계</li>
+      <li>멀티 프로젝트 라우팅 · 리드 캡처 자동화 · 실시간 알림 · 플레이북 문서화</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <span class="proj-title">WebScout</span>
+    <a class="proj-link" href="https://github.com/dalgoms/webscout-next"> github.com/dalgoms/webscout-next</a>
+    <div class="proj-desc">웹사이트 구조 분석 도구</div>
+    <ul>
+      <li>내부 페이지 구조 분석 · 숨은 페이지 탐지 · SEO 콘텐츠 클러스터 분석</li>
+      <li>Next.js · Vercel · Make.com 리드 캡처 연동</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <span class="proj-title">AI 건강이 (AI Health Companion)</span>
+    <div class="proj-desc">헬스케어 앱 리텐션 문제 해결을 위한 MVP 설계</div>
+    <ul>
+      <li>경쟁 서비스 구조 분석 → 리텐션 문제 정의 → AI 건강 알림 + 챗봇 + Daily Health Loop 설계</li>
+      <li>Braze CRM 연동 시나리오 설계</li>
+    </ul>
+  </div>
+
+  <div class="proj">
+    <span class="proj-title">Business Automation System</span>
+    <div class="proj-desc">마케팅·세일즈 운영 전체를 자동화하는 비즈니스 레이어</div>
+    <ul>
+      <li>Lead Capture → CRM → 팔로업 → 콘텐츠 파이프라인 → 멀티채널 알림 (Telegram·Email·Slack·KakaoTalk)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Experience -->
+<div class="section">
+  <h2>Experience</h2>
+
+  <div style="margin-bottom:5px;">
+    <span class="exp-header">timbel</span> <span class="exp-role">— Marketing Team Lead (Growth Marketing & Product Strategy) · 2017.07 — Present</span>
+    <p class="exp-body">
+      약 15명 규모 조직에서 속기 서비스 및 음성 기록 시장의 B2B/B2C 마케팅 전략 수립·운영.
+      SEO, 퍼포먼스 마케팅, 콘텐츠 전략, 랜딩페이지 전환 최적화를 통해 리드 유입 구조 구축 및 매출 성장 기여.
+      Product Marketing 관점에서 서비스 경험과 전환 구조 설계. 현재 AI 도구 기반 마케팅 자동화 파이프라인 구축·운영 중.
+    </p>
+  </div>
+
+  <div>
+    <span class="exp-header">AI 서비스 경험</span> <span class="exp-role">— SK hynix · SK Telecom 공동 프로젝트</span>
+    <ul>
+      <li>AI 음성인식 기반 회의록 자동 생성 서비스 런칭 지원</li>
+      <li>B2B 고객 대상 서비스 커뮤니케이션 · 초기 운영 및 기능 개선 참여</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Tools -->
+<div class="section">
+  <h2>Tools</h2>
+  <div class="tools-grid">
+    <div><dt>AI</dt><dd>GPT · Claude · Cursor</dd></div>
+    <div><dt>Automation</dt><dd>Make · Notion API · GitHub Actions</dd></div>
+    <div><dt>Dev</dt><dd>Next.js · Node.js · Vercel · TypeScript</dd></div>
+    <div><dt>Design</dt><dd>Figma</dd></div>
+  </div>
+</div>
+
+<!-- How I Work -->
+<div class="section">
+  <h2>How I Work</h2>
+  <p class="how">
+    <strong>Automation First</strong> — 반복되는 작업은 자동화 파이프라인으로 해결합니다.
+    <strong>Build Fast</strong> — 완벽한 다음 달보다 작동하는 오늘을 선택합니다.
+    <strong>AI-Augmented</strong> — 코드 생성, 콘텐츠 초안, 리드 스코어링에 AI를 활용합니다.
+  </p>
+</div>
+
+<!-- Footer -->
+<hr>
+<p class="footer-edu">아주대학교 — 미디어학과 학사</p>
+<p class="footer-contact">
+  GitHub: <a href="https://github.com/dalgoms">github.com/dalgoms</a> · Email: seyoung67@timbel.net
+</p>
+<p class="closing">문제를 발견하면 자동화하거나 작은 도구를 만들어 해결하는 것을 좋아합니다.</p>
+
+</body>
+</html>
