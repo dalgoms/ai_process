@@ -1,0 +1,155 @@
+# Workflows - GitHub Actions 상세
+
+## 전체 워크플로우 맵
+
+```
+notion-sync.yml ──▶ codex.yml ──▶ ci.yml
+     │                  │            │
+     ▼                  ▼            ▼
+deploy-notify.yml  deploy-notify.yml  deploy-notify.yml
+  (Telegram)         (Telegram)        (Telegram)
+```
+
+---
+
+## 1. notion-sync.yml
+
+**역할**: Notion Work Inbox를 5분마다 확인하고, 새 작업을 GitHub Issue로 변환
+
+| 항목 | 값 |
+|------|-----|
+| 트리거 | `schedule: */5 * * * *`, `workflow_dispatch` |
+| 필요 시크릿 | `NOTION_TOKEN`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` |
+
+### 동작 흐름
+
+```
+1. Notion API로 DB 쿼리 (Processed = false 필터)
+2. 미처리 항목 발견 시:
+   a. GitHub Issue 생성 (ai-task 라벨)
+   b. Codex 워크플로우 dispatch (issue_number 전달)
+   c. Notion에 Processed = true 업데이트
+   d. Notion에 PR URL = Issue URL 기록
+   e. Telegram 알림 발송
+3. 미처리 항목 없으면 조용히 종료
+```
+
+### 중복 방지
+
+Issue body에 `notion:{page-id}`를 포함하고, 생성 전 동일 ID로 검색하여 중복 생성 방지
+
+---
+
+## 2. codex.yml
+
+**역할**: GPT Codex를 실행하여 Issue의 요구사항대로 코드를 수정하고 PR 생성
+
+| 항목 | 값 |
+|------|-----|
+| 트리거 | `issues: opened`, `issue_comment: created`, `workflow_dispatch` |
+| 필요 시크릿 | `OPENAI_API_KEY`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` |
+| 권한 | contents: write, pull-requests: write, issues: write |
+
+### 동작 흐름
+
+```
+1. Issue 정보 조회 (issue_number로 title, body 가져오기)
+2. openai/codex-action@v1 실행
+   - sandbox: workspace-write
+   - --full-auto 모드
+3. 결과 분기:
+   ├── FAILURE → Issue 코멘트 + Telegram 알림
+   ├── NO CHANGES → Issue 코멘트
+   └── SUCCESS → 브랜치 생성 → PR 생성 → Issue 코멘트 + Telegram 알림
+```
+
+### Issue 코멘트 형식
+
+모든 코멘트는 테이블 형식으로 구조화:
+
+```markdown
+## Codex Result: SUCCESS / FAILED / NO CHANGES
+
+| Field | Value |
+|-------|-------|
+| Status | ... |
+| Issue | #N |
+| PR | URL (성공 시) |
+| Files changed | N (성공 시) |
+| Run | [View logs](URL) |
+
+### Next Action
+1. ...
+```
+
+### 브랜치 네이밍
+
+- 기본: `codex/issue-{number}`
+- 이미 존재 시: `codex/issue-{number}-{timestamp}`
+
+---
+
+## 3. ci.yml
+
+**역할**: PR의 코드가 빌드 가능한지 검증
+
+| 항목 | 값 |
+|------|-----|
+| 트리거 | `pull_request: branches: [master]` |
+| 필요 시크릿 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` |
+
+### 동작 흐름
+
+```
+1. Node.js 20 + npm ci
+2. tsc --noEmit (타입 체크, non-blocking)
+3. npm run build (빌드, blocking)
+4. 결과:
+   ├── 성공 → PR에 PASSED 코멘트
+   └── 실패 → PR에 FAILED 코멘트 (빌드 로그 포함) + Telegram 알림
+```
+
+### Branch Protection 연동
+
+GitHub에서 `build` job이 required check로 설정되어 있어, CI 실패 시 PR 머지가 차단됩니다.
+
+---
+
+## 4. deploy-notify.yml
+
+**역할**: 모든 중요 이벤트를 Telegram으로 알림
+
+| 항목 | 값 |
+|------|-----|
+| 트리거 | `push: master`, `workflow_run: [GPT Codex Agent, CI Build Check]` |
+| 필요 시크릿 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` |
+
+### 알림 유형
+
+| 이벤트 | 메시지 형식 |
+|--------|-------------|
+| master push | `[DEPLOY SUCCESS] repo, branch, commit, author, SHA, run URL` |
+| Codex 성공 | `[SUCCESS] GPT Codex Agent, repo, branch, trigger, SHA, run URL` |
+| Codex 실패 | `[FAILED] GPT Codex Agent, repo, branch, trigger, SHA, run URL` |
+| CI 성공 | `[SUCCESS] CI Build Check, ...` |
+| CI 실패 | `[FAILED] CI Build Check, ...` |
+
+---
+
+## 5. auto-merge.yml (비활성)
+
+**역할**: 빌드 성공 시 auto-merge 라벨이 붙은 PR을 자동 머지
+
+| 항목 | 값 |
+|------|-----|
+| 트리거 | `workflow_dispatch` (현재 비활성) |
+| 상태 | `if: false` - L4 전환 시 활성화 |
+
+---
+
+## GITHUB_TOKEN 제한 사항
+
+GitHub Actions의 `GITHUB_TOKEN`으로 생성된 이벤트(Issue, Comment 등)는 다른 워크플로우를 트리거하지 않습니다. 이 보안 정책 때문에:
+
+- `notion-sync`가 Issue를 만든 후 `workflow_dispatch`로 Codex를 직접 호출
+- 향후 더 복잡한 체이닝이 필요하면 PAT(Personal Access Token) 사용 검토

@@ -111,3 +111,13 @@ Issue에 `@codex` 코멘트를 달면 다시 실행
 | `ci.yml` | PR | npm run build 검증 |
 | `deploy-notify.yml` | push/workflow_run | Telegram 알림 |
 | `auto-merge.yml` | 비활성 | 향후 L4 자동화용 |
+
+## 상세 문서
+
+| 문서 | 내용 |
+|------|------|
+| [Architecture](docs/architecture.md) | 시스템 구성도, 데이터 흐름, 기술 스택, DB 스키마 |
+| [Setup Guide](docs/setup-guide.md) | 처음부터 전체 파이프라인 구축하는 방법 |
+| [Workflows](docs/workflows.md) | 각 GitHub Actions 워크플로우 상세 동작 |
+| [Troubleshooting](docs/troubleshooting.md) | 자주 발생하는 문제 해결 + FAQ |
+| [Changelog](docs/changelog.md) | 구축 이력, 해결한 버그, 참조 링크 |

@@ -1,0 +1,181 @@
+# Architecture - AI Automation Pipeline
+
+## System Overview
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                        INPUT LAYER                                  │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────────┐   │
+│  │  Notion   │  │  Cursor  │  │  GitHub  │  │  Telegram (향후) │   │
+│  │  Mobile   │  │  Desktop │  │  Issue   │  │  Bot Command     │   │
+│  └─────┬────┘  └─────┬────┘  └─────┬────┘  └────────┬─────────┘   │
+│        │              │             │                 │             │
+└────────┼──────────────┼─────────────┼─────────────────┼─────────────┘
+         │              │             │                 │
+         ▼              ▼             ▼                 ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                     ORCHESTRATOR LAYER                               │
+│                                                                     │
+│  ┌──────────────────────────────────────────────────────────────┐   │
+│  │  notion-sync.yml (GitHub Actions, 5분 cron)                  │   │
+│  │  - Notion DB 폴링 (Processed = false)                        │   │
+│  │  - GitHub Issue 자동 생성 (ai-task 라벨)                      │   │
+│  │  - Codex workflow_dispatch 호출                               │   │
+│  │  - Notion에 Processed 체크 + PR URL 기록                     │   │
+│  │  - Telegram 알림 발송                                         │   │
+│  └──────────────────────────────────────────────────────────────┘   │
+│                              │                                      │
+└──────────────────────────────┼──────────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                      CODE AGENT LAYER                               │
+│                                                                     │
+│  ┌──────────────────────────────────────────────────────────────┐   │
+│  │  codex.yml (GitHub Actions)                                   │   │
+│  │  - openai/codex-action@v1 실행                                │   │
+│  │  - sandbox: workspace-write                                   │   │
+│  │  - Issue 내용을 프롬프트로 전달                                │   │
+│  │  - 코드 수정 → 브랜치 생성 → PR 생성                          │   │
+│  │  - Issue에 결과 코멘트 (SUCCESS / FAILED / NO CHANGES)        │   │
+│  │  - Telegram 알림 (성공/실패 모두)                              │   │
+│  └──────────────────────────────────────────────────────────────┘   │
+│                              │                                      │
+└──────────────────────────────┼──────────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                     VALIDATION LAYER                                │
+│                                                                     │
+│  ┌──────────────────────────────────────────────────────────────┐   │
+│  │  ci.yml (GitHub Actions)                                      │   │
+│  │  - PR 대상: master 브랜치                                     │   │
+│  │  - npm ci → tsc --noEmit → npm run build                     │   │
+│  │  - 성공/실패 PR 코멘트                                        │   │
+│  │  - 실패 시 Telegram 알림                                      │   │
+│  └──────────────────────────────────────────────────────────────┘   │
+│                                                                     │
+│  ┌──────────────────────────────────────────────────────────────┐   │
+│  │  Branch Protection (GitHub Settings)                          │   │
+│  │  - Required check: "build"                                    │   │
+│  │  - build 실패 시 머지 차단                                    │   │
+│  │  - enforce_admins: false (owner 직접 push 허용)               │   │
+│  └──────────────────────────────────────────────────────────────┘   │
+│                              │                                      │
+└──────────────────────────────┼──────────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                     APPROVAL LAYER (수동)                            │
+│                                                                     │
+│  ┌──────────────────────────────────────────────────────────────┐   │
+│  │  사람이 PR을 확인하고 Merge 클릭                               │   │
+│  │  - GitHub Web / Mobile App에서 가능                            │   │
+│  │  - auto-merge는 현재 비활성 (L4 전환 시 활성화)                │   │
+│  └──────────────────────────────────────────────────────────────┘   │
+│                              │                                      │
+└──────────────────────────────┼──────────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                     DEPLOY + NOTIFICATION LAYER                     │
+│                                                                     │
+│  ┌────────────────────┐  ┌─────────────────────────────────────┐   │
+│  │  Vercel             │  │  deploy-notify.yml                  │   │
+│  │  - master push 감지 │  │  - push 이벤트: 배포 알림           │   │
+│  │  - 자동 빌드+배포   │  │  - workflow_run: Codex/CI 결과 알림 │   │
+│  │  - Preview Deploy   │  │  - Telegram 메시지 발송             │   │
+│  └────────────────────┘  └─────────────────────────────────────┘   │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+## Data Flow
+
+```
+1. INPUT
+   Notion DB (Work Inbox)
+   ┌──────────────────────────────────────────────────┐
+   │ Title │ Task Type │ Goal │ Target Files │ Priority│
+   │ ...   │ dev-task  │ ...  │ app/page.tsx │ medium  │
+   └──────────────────────────────────────────────────┘
+                         │
+                         ▼ (5분 폴링)
+2. ORCHESTRATOR
+   GitHub Issue #N (ai-task 라벨)
+   ┌──────────────────────────────────────────────────┐
+   │ ## Task                                          │
+   │ ## Context (Project, Type, Priority, Notion URL) │
+   │ ## Goal (Notion의 Goal 필드)                     │
+   │ ### Target Files                                 │
+   │ notion:{page-id}                                 │
+   └──────────────────────────────────────────────────┘
+                         │
+                         ▼ (workflow_dispatch)
+3. CODE AGENT
+   GPT Codex → git diff
+   ┌──────────────────────────────────────────────────┐
+   │ Branch: codex/issue-N                            │
+   │ Commit: feat: {issue title}                      │
+   │ Changed: app/page.tsx (1 file)                   │
+   └──────────────────────────────────────────────────┘
+                         │
+                         ▼
+4. VALIDATION
+   PR #M → CI Build Check
+   ┌──────────────────────────────────────────────────┐
+   │ npm ci → tsc --noEmit → npm run build            │
+   │ Result: PASSED / FAILED                          │
+   └──────────────────────────────────────────────────┘
+                         │
+                         ▼ (사람 승인)
+5. DEPLOY
+   Vercel → Production
+   ┌──────────────────────────────────────────────────┐
+   │ https://webscout-next-8veo.vercel.app            │
+   └──────────────────────────────────────────────────┘
+```
+
+## 성숙도 단계
+
+| 레벨 | 이름 | 설명 | 상태 |
+|------|------|------|------|
+| L1 | 수동 | 모든 단계를 사람이 실행 | 완료 |
+| L2 | 반자동 | 일부 단계만 자동, 핵심 연결은 수동 | 완료 |
+| **L3** | **준자동** | **트리거부터 결과 통보까지 연결, 승인만 수동** | **현재** |
+| L4 | 완전자동 | 입력부터 배포까지 사람 개입 없음 | 향후 |
+
+## 기술 스택
+
+| 구분 | 기술 |
+|------|------|
+| Code Agent | OpenAI Codex (openai/codex-action@v1) |
+| CI/CD | GitHub Actions |
+| Deployment | Vercel |
+| Task Management | Notion API |
+| Notification | Telegram Bot API |
+| Version Control | Git + GitHub |
+| Framework | Next.js |
+| Remote Access | AnyDesk |
+
+## Secrets (GitHub Repository)
+
+| Secret | 용도 |
+|--------|------|
+| `OPENAI_API_KEY` | GPT Codex API 호출 |
+| `TELEGRAM_BOT_TOKEN` | Telegram Bot 메시지 발송 |
+| `TELEGRAM_CHAT_ID` | Telegram 수신 대상 |
+| `NOTION_TOKEN` | Notion API 접근 (Integration) |
+| `GITHUB_TOKEN` | 자동 제공 - Issue/PR 생성 |
+
+## Notion DB Schema (Work Inbox)
+
+| 필드 | 타입 | 용도 |
+|------|------|------|
+| Title | title | 작업 제목 |
+| Task Type | select | planning, design-fix, dev-task, bug-fix, refactor, deploy |
+| Goal | rich_text | 구체적인 변경 목표 |
+| Target Files | rich_text | 수정 대상 파일 경로 |
+| Priority | select | urgent, high, medium, low |
+| Project | select | webscout-next, timbel-homepage, clipdesk 등 |
+| Approval Required | checkbox | 수동 승인 필요 여부 |
+| PR URL | url | 자동 기록 - Issue/PR 링크 |
+| Error Log | rich_text | 에러 기록 |
+| Processed | checkbox | 자동 체크 - sync 완료 여부 |
+| Requested At | created_time | 자동 기록 |
