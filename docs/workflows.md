@@ -1,5 +1,7 @@
 # Workflows - GitHub Actions 상세
 
+> 최종 업데이트: 2026-03-10
+
 ## 전체 워크플로우 맵
 
 ```

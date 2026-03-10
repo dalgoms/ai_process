@@ -1,5 +1,7 @@
 # Troubleshooting & FAQ
 
+> 최종 업데이트: 2026-03-10
+
 ## 자주 발생하는 문제
 
 ### 1. Notion에 등록했는데 Issue가 안 생겨요
