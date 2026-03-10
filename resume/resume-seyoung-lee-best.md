@@ -8,13 +8,13 @@ Growth Marketing Lead / AI Operations
 
 ## Professional Summary
 
-Growth marketing lead with 8+ years of hands-on experience in acquisition, conversion optimization, and retention system design. I build and operate marketing automation pipelines using Notion, Make, GPT, and Vercel — not as experiments, but as core operational infrastructure. My strength is in structuring practical initial analysis and execution frameworks for real work: identifying problems, forming hypotheses, and setting up workflows that teams can act on immediately. I prepare AI-assisted analysis, operational ideas, and execution-ready structures assuming actual business work will begin — not to create portfolio pieces, but to reduce time-to-action.
+Growth marketing lead with 8+ years of hands-on experience in acquisition, conversion optimization, and retention system design. My core strength is analysis-driven planning and design combined with AI automation: I identify problems, form hypotheses, and build execution-ready workflows that teams can act on immediately. I operate end-to-end — from website builds (Wix: domain, hosting, DB, full customization) through marketing automation pipelines (Notion, Make, GPT, Vercel) to performance optimization. I prepare AI-assisted analysis, operational ideas, and execution-ready structures assuming actual business work will begin — not to create portfolio pieces, but to reduce time-to-action.
 
 ---
 
 ## Core Competencies
 
-Growth Marketing · AI Workflow Design · Marketing Automation (Notion / Make / GPT) · Content & Lead Systems · Data-Driven Experimentation · Cross-functional Collaboration
+Analysis-Driven Planning & Design · Growth Marketing · AI Workflow Design · Marketing Automation (Notion / Make / GPT) · Website Operations (Wix Full-Stack) · Content & Lead Systems · Data-Driven Experimentation · Cross-functional Collaboration
 
 ---
 
@@ -27,7 +27,8 @@ Growth Marketing · AI Workflow Design · Marketing Automation (Notion / Make / 
 Led growth marketing and brand communications for a voice-data technology company (~15 employees), owning the full marketing function from strategy to execution.
 
 - Planned and executed B2C performance marketing campaigns across Meta, Google, and Naver; managed annual ad budgets of KRW 800M–1.4B
-- Built SEO-driven content strategy and lead acquisition funnels; designed landing page UX and conversion flows from scratch
+- Built and operated company websites end-to-end on Wix (domain purchase, hosting, DB management, custom development); designed landing page UX and conversion flows from scratch
+- Built SEO-driven content strategy and lead acquisition funnels based on site structure analysis
 - Coordinated across product, design, and sales teams to align service messaging, campaign timing, and launch operations
 - Introduced AI-powered marketing automation: built Notion + Make + GPT pipelines for content research, lead management, and multi-channel alerting
 - Transitioned growth systems from B2C to B2B after stabilizing acquisition infrastructure in 2025
@@ -75,6 +76,7 @@ Operational system currently in production. Connects lead capture (web form → 
 **AI:** GPT, Claude, Cursor
 **Automation:** Make, Notion API, GitHub Actions
 **Development:** Next.js, Node.js, Vercel, TypeScript
+**Web Platform:** Wix (domain, hosting, DB, full customization)
 **Design:** Figma
 
 ---
