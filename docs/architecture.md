@@ -1,5 +1,7 @@
 # Architecture - AI Automation Pipeline
 
+> 최종 업데이트: 2026-03-10
+
 ## System Overview
 
 ```

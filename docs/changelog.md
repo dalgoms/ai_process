@@ -1,5 +1,12 @@
 # Changelog - 구축 이력
 
+## 2026-03-10 (Documentation Refresh)
+
+- `docs` 폴더의 모든 Markdown 문서에 최종 업데이트 날짜 표기 추가
+- 문서 헤더 형식 일관화
+
+---
+
 ## 2026-03-10 (Multi-Project Upgrade)
 
 ### Phase 4: 멀티 프로젝트 확장
