@@ -2,30 +2,19 @@
 
 Growth Marketing Lead / Automation & Web Operations
 
-010-4828-4737 · seyoung8967@gmail.com · [GitHub](https://github.com/dalgoms) · [LinkedIn](https://linkedin.com/in/)
+1989.06.07 · 010-4828-4737 · seyoung8967@gmail.com · [GitHub](https://github.com/dalgoms) · [LinkedIn](https://linkedin.com/in/)
 
 ---
 
 ## Summary
 
-Growth marketing lead with 10+ years of hands-on experience in designing and operating user acquisition, conversion optimization, and retention systems. My core strength is analysis-driven planning and design combined with execution-focused operations. I define problems, form hypotheses, then build the systems a business needs end-to-end — from website construction, lead flow design, and content operations to marketing automation.
-
-In particular, I can independently handle the full lifecycle of Wix-based business websites: domain purchase and setup, site planning and build, CMS/database operations, lead flow design, and customization. I also design operational structures using Notion, Make, GPT, and Vercel to reduce repetitive work and increase execution speed. My strength lies in preparing initial analysis and execution frameworks for real business deployment, not portfolio-ready deliverables.
+Growth marketing lead with 10+ years of hands-on experience in designing and operating acquisition, conversion, and retention systems. Analysis-driven planning combined with execution-focused operations is my core strength — from Wix website builds (domain, CMS, DB, lead flow, customization) through marketing automation (Notion, Make, GPT, Vercel) to performance optimization, building business systems end-to-end.
 
 ---
 
 ## Core Competencies
 
-Analysis-Driven Planning & Design
-Growth Marketing
-Marketing Automation
-Website Planning & Operations
-Wix-Based Business Website Build
-CMS/DB Operations
-Lead Flow Design
-Content & Acquisition Structure Design
-Data-Driven Experimentation
-Cross-functional Collaboration
+Analysis-Driven Planning & Design · Growth Marketing · Marketing Automation · Website Planning & Operations (Wix Full-Stack) · CMS/DB · Lead Flow Design · Content & Acquisition Structure Design · Data-Driven Experimentation · Cross-functional Collaboration
 
 ---
 
@@ -45,6 +34,8 @@ Led the full scope of marketing strategy, execution, website operations, and aut
 - Participated in B2B transition operations after stabilizing B2C acquisition infrastructure in 2025
 
 ### AI Service Project — SK hynix · SK Telecom Joint Initiative
+
+2023 — 2025
 
 Participated in the planning and launch of an AI-powered meeting transcription service (STT-based).
 
@@ -73,7 +64,7 @@ Ajou University — B.A. in Media Studies
 
 ## Practical Application Cases (2026~)
 
-Cases actually applied to real work since 2026. The same approach applies to every project: first analyze business structure and user flow, then design actionable operational methods and automation architecture. The focus is on preparing initial analysis and execution frameworks that connect directly to real work — not showcase portfolios.
+Cases actually applied to real work since 2026.
 
 **WebScout — Service Structure Analysis Tool**
 An internal analysis tool for evaluating website architecture, detecting hidden pages, and mapping SEO content clusters. Used in practice to assess competitor structures and identify acquisition opportunities.
@@ -88,7 +79,7 @@ An operational system currently in production. Includes lead capture (inquiry fo
 
 **MEFIMAKE — Meta Ad Creative Generator**
 A browser-based creative IDE built to solve the creative production bottleneck for performance marketing teams. Handles AI-powered copy generation (headlines, subtexts, CTAs), multi-size auto-export (1:1, 16:9, 9:16), and batch generation (5 variants × 3 sizes = 15 images) in a single interface. Integrates with WebScout and Meta Library for competitive creative research through production.
-Tech stack: Vanilla JS / CSS3 / Vercel — [mefimake.vercel.app](https://mefimake.vercel.app)
+Tech stack: Vanilla JS / CSS3 / Vercel — [mefimake.vercel.app](https://mefimake.vercel.app) · [github](https://github.com/dalgoms/public/tree/main/Mefimake)
 
 **Alert Automation (Google/Naver)**
 An automated monitoring structure using Google Alerts and Naver keyword alerts for industry, competitor, and keyword tracking. Collected alerts are automatically organized into Notion DB via Make, with real-time notifications sent to Telegram/Slack when significant changes are detected. Automated the early detection layer of marketing research and competitive analysis to improve response speed.
