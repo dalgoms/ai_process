@@ -26,13 +26,19 @@ gh repo create my-project --public
 cd my-project
 ```
 
-### 2-2. GitHub Secrets 등록
+### 2-2. GitHub Secrets 등록 (역할별)
 
 ```bash
+# 프로젝트 레포 (codex.yml, deploy-notify.yml)
 gh secret set OPENAI_API_KEY --body "sk-..."
 gh secret set TELEGRAM_BOT_TOKEN --body "123456:ABC..."
 gh secret set TELEGRAM_CHAT_ID --body "987654321"
+```
+
+```bash
+# 중앙 오케스트레이터 레포 (ai_process/notion-sync.yml)
 gh secret set NOTION_TOKEN --body "ntn_..."
+gh secret set GH_PAT --body "github_pat_..."
 ```
 
 ### 2-3. Branch Protection 설정
@@ -135,7 +141,8 @@ Work Inbox 페이지 → 우측 상단 `...` → Connections → 만든 Integrat
 
 ## 7. 검증 체크리스트
 
-- [ ] `gh secret list`로 4개 시크릿 확인
+- [ ] 프로젝트 레포에 `OPENAI_API_KEY`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` 등록 확인
+- [ ] 중앙 레포(`ai_process`)에 `NOTION_TOKEN`, `GH_PAT`, `TELEGRAM_*` 등록 확인
 - [ ] Notion Work Inbox에 테스트 항목 등록
 - [ ] `gh workflow run "Notion to GitHub Issue Sync"`로 수동 트리거
 - [ ] Issue 생성 → Codex 실행 → PR 생성 확인

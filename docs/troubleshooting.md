@@ -18,7 +18,7 @@
 
 **원인 4: NOTION_TOKEN이 등록되지 않음**
 ```bash
-gh secret list --repo dalgoms/webscout-next
+gh secret list --repo dalgoms/ai_process
 ```
 
 ### 2. Issue는 생겼는데 Codex가 실행 안 돼요
@@ -57,7 +57,7 @@ className에서 bg-blue-500을 찾아 bg-indigo-600으로 수정하세요.
 
 **확인 1: 시크릿 등록**
 ```bash
-gh secret list --repo dalgoms/webscout-next
+gh secret list --repo OWNER/TARGET_REPO
 # TELEGRAM_BOT_TOKEN과 TELEGRAM_CHAT_ID가 있는지 확인
 ```
 
@@ -67,7 +67,7 @@ gh secret list --repo dalgoms/webscout-next
 
 **확인 3: Actions 로그 확인**
 ```bash
-gh run list --repo dalgoms/webscout-next --limit 5
+gh run list --repo OWNER/TARGET_REPO --limit 5
 gh run view {RUN_ID} --log
 ```
 

@@ -1,5 +1,13 @@
 # Changelog - 구축 이력
 
+## 2026-03-10 (Docs Update)
+
+- `docs/setup-guide.md`: 시크릿 등록 절차를 프로젝트 레포/중앙 오케스트레이터 레포 기준으로 분리
+- `docs/troubleshooting.md`: 시크릿/런 조회 명령의 레포 예시를 하드코딩에서 플레이스홀더로 정리
+- `docs/workflows.md`: `deploy-notify.yml` 트리거/알림 설명을 현재 워크플로우 정의와 일치하도록 정정
+
+---
+
 ## 2026-03-10 (Multi-Project Upgrade)
 
 ### Phase 4: 멀티 프로젝트 확장
