@@ -1,126 +1,90 @@
-# 이세영
+# Seyoung Lee
 
-**AI Growth & Product Systems Builder**
+Growth Marketing Lead / AI Operations
 
-사용자 유입 → 전환 → 리텐션까지 이어지는 Growth 구조를 설계하고 직접 운영해왔습니다.
-퍼포먼스 마케팅으로 광고비 8억 → 매출 52억을 만들었고, 3년간 리드 수를 14배 성장시켰습니다.
-GPT·Make·Notion을 연결한 엔드투엔드 자동화 파이프라인을 직접 구축하여 마케팅 운영을 시스템화하고 있으며,
-서비스 구조를 분석해 AI 헬스케어 MVP를 설계한 경험이 있습니다.
+010-4828-4737 · seyoung8967@gmail.com · [GitHub](https://github.com/dalgoms) · [LinkedIn](https://linkedin.com/in/)
 
 ---
 
-## Core Skills
+## Professional Summary
 
-**Growth**
-Acquisition Strategy · Conversion Optimization · Retention Design · SEO · Experimentation
-
-**AI & Automation**
-Workflow Automation · AI-assisted Operations · No-Code/Low-Code Systems · Data-driven Growth
-
-**Product**
-Product Analytics · User Flow Design · MVP Prototyping · Service Messaging · Documentation
+Growth marketing lead with 8+ years of hands-on experience in acquisition, conversion optimization, and retention system design. I build and operate marketing automation pipelines using Notion, Make, GPT, and Vercel — not as experiments, but as core operational infrastructure. My strength is in structuring practical initial analysis and execution frameworks for real work: identifying problems, forming hypotheses, and setting up workflows that teams can act on immediately. I prepare AI-assisted analysis, operational ideas, and execution-ready structures assuming actual business work will begin — not to create portfolio pieces, but to reduce time-to-action.
 
 ---
 
-## Key Achievements
+## Core Competencies
 
-**B2C 제품 Growth 운영 — 속기 키보드**
-
-| 연도 | 광고비 | 매출 | 비고 |
-|---|---|---|---|
-| 2023 | 8억 | 52억 | ROAS 650% |
-| 2024 | 14억 | 72억 | 리드 볼륨 확대기 |
-
-2년간 리드 수 **14배 증가**. 2025년 Growth 시스템 안정화 완료 후 B2B 사업으로 확장 진행 중.
-
-**실험 기반 Growth 접근 방식**
-
-- UTM 코드 기반 유입 경로 추적 구조 설계
-- Meta 광고 소재 A/B 테스트 운영
-- 숨은 랜딩페이지 제작 및 전환 실험
-- 분 단위 유입 데이터 분석을 통한 소재·랜딩페이지 최적화
-
-**자동화 파이프라인 구축**
-
-Notion + Make + GPT 기반 콘텐츠 수집·분석·알림 자동화 → 리서치 시간 약 80% 절감
-
-**리드 관리 시스템 설계**
-
-문의폼 → Notion CRM → 알림 → 미응대 리드 자동 리마인더 → 리드 누락 방지, 응대 속도 개선
-
----
-
-## Projects
-
-**AI Process Playbook** — [github.com/dalgoms/ai_process](https://github.com/dalgoms/ai_process)
-AI 기반 업무 자동화 전략을 정리한 중앙 자동화 허브
-
-- `Notion → GitHub Issue → GPT Codex → PR → CI → Deploy` 파이프라인 설계
-- 멀티 프로젝트 라우팅, 리드 캡처 자동화, 실시간 알림
-- 자동화 아키텍처 및 운영 플레이북 문서화
-
-**WebScout** — [github.com/dalgoms/webscout-next](https://github.com/dalgoms/webscout-next)
-웹사이트 구조 분석 도구
-
-- 내부 페이지 구조 분석, 숨은 페이지 탐지, SEO 콘텐츠 클러스터 분석
-- Next.js · Vercel · Make.com 리드 캡처 연동
-
-**AI 건강이 (AI Health Companion)** — 인터뷰 준비용 아이디어 프로젝트
-헬스케어 앱 리텐션 문제 분석 → MVP 아이디어 설계
-
-- 경쟁 서비스 20,000페이지 크롤링 분석 후 리텐션 문제 정의
-- AI 건강 알림 + 챗봇 + Daily Health Loop 개념 설계
-- Braze CRM 연동 시나리오 설계
-
-**Business Automation System**
-마케팅·세일즈 운영 전체를 자동화하는 비즈니스 레이어
-
-- Lead Capture: 문의폼 → Make.com → Notion CRM → Telegram + Email
-- Follow-up: 스케줄 기반 미연락 리드 자동 알림
-- Content Pipeline: 아이디어 등록 → AI 초안 → 사람 검토 → 게시
-- Multi-Channel: Telegram · Email · Slack · KakaoTalk · SMS
+Growth Marketing · AI Workflow Design · Marketing Automation (Notion / Make / GPT) · Content & Lead Systems · Data-Driven Experimentation · Cross-functional Collaboration
 
 ---
 
 ## Experience
 
-**timbel** — Marketing Team Lead (Growth Marketing & Product Strategy)
+### (주)팀벨 — 홍보마케팅팀 팀장
+
 2017.07 — Present
 
-약 15명 규모 조직에서 음성 데이터 기반 B2C 제품의 마케팅 전략을 수립하고 운영.
-SEO, 퍼포먼스 마케팅, 콘텐츠 전략, 랜딩페이지 UX 개선을 통해 리드 유입 구조를 구축하고 매출 성장에 기여.
-2025년 B2C Growth 시스템 안정화 후 B2B 사업 확장을 진행하며, Product Marketing 관점에서 전환 구조를 설계.
-현재 Cursor, GPT, Notion, Make를 활용한 마케팅 운영 자동화 파이프라인을 구축·운영 중.
+Led growth marketing and brand communications for a voice-data technology company (~15 employees), owning the full marketing function from strategy to execution.
 
-**AI 서비스 경험** — SK hynix · SK Telecom 공동 프로젝트
+- Planned and executed B2C performance marketing campaigns across Meta, Google, and Naver; managed annual ad budgets of KRW 800M–1.4B
+- Built SEO-driven content strategy and lead acquisition funnels; designed landing page UX and conversion flows from scratch
+- Coordinated across product, design, and sales teams to align service messaging, campaign timing, and launch operations
+- Introduced AI-powered marketing automation: built Notion + Make + GPT pipelines for content research, lead management, and multi-channel alerting
+- Transitioned growth systems from B2C to B2B after stabilizing acquisition infrastructure in 2025
 
-- AI 음성인식 기반 회의록 자동 생성 서비스 — 기획 참여부터 디자인 협업까지
-- B2B 고객 대상 서비스 커뮤니케이션 및 초기 운영
-- 서비스 기능 개선 방향 제안 및 반영
+### AI Service Project — SK hynix · SK Telecom Joint Initiative
+
+Participated in the planning and launch of an AI-powered meeting transcription service (STT-based).
+
+- Joined from early product planning stage through design collaboration and go-to-market preparation
+- Handled B2B client communication, onboarding support, and initial service operations
+- Proposed and contributed to feature improvement directions based on user feedback and operational data
+
+---
+
+## Key Achievements
+
+- Grew B2C product revenue from KRW 5.2B (2023) to KRW 7.2B (2024), achieving 650% ROAS while scaling lead volume 14x over two years
+- Designed UTM-based attribution tracking, ran Meta ad creative A/B tests, and built hidden landing pages for conversion experiments — optimizing based on per-minute inflow data
+- Built a content and lead automation pipeline using Notion + Make + GPT, reducing marketing research time by approximately 80%
+- Designed an end-to-end lead management system: inquiry form → Notion CRM → alerting → automated follow-up reminders for uncontacted leads
+- Stabilized the full B2C growth system by 2025 and initiated expansion into B2B operations
+
+---
+
+## Selected Practical AI Initiatives
+
+Work samples prepared as initial analysis, operational hypotheses, and execution frameworks — structured for real business application, not as portfolio showcases.
+
+**Healthcare Retention Analysis (AI 건강이)**
+Prepared a pre-engagement business analysis for the healthcare app domain. Crawled and analyzed 20,000 pages of a competing service to identify structural retention gaps. Organized initial hypotheses around AI-driven daily health notifications, chatbot engagement, and a morning/evening health loop. Designed a Braze CRM integration scenario and user flow framework as an execution-ready starting point.
+
+**WebScout — Service Structure Analysis Tool**
+Built an internal analysis tool for evaluating website architecture, hidden page detection, and SEO content cluster mapping. Used in practice to assess competitor structures and identify acquisition opportunities. (Next.js / Vercel)
+
+**AI Process Playbook**
+Structured a central operational hub for AI-assisted workflow automation. Designed a pipeline from Notion task intake through GitHub Issue, GPT Codex processing, pull request, CI, and deployment. Documents reusable automation architecture and operational playbooks. ([github.com/dalgoms/ai_process](https://github.com/dalgoms/ai_process))
+
+**Business Automation System**
+Operational system currently in production. Connects lead capture (web form → Make → Notion CRM → Telegram/Email), scheduled follow-up automation, AI-assisted content drafting pipeline, and multi-channel notifications across Telegram, Email, Slack, KakaoTalk, and SMS.
 
 ---
 
 ## Tools
 
-| AI | Automation | Dev | Design |
-|---|---|---|---|
-| GPT · Claude | Make · Notion API | Next.js · Node.js | Figma |
-| Cursor | GitHub Actions | Vercel · TypeScript | |
+**AI:** GPT, Claude, Cursor
+**Automation:** Make, Notion API, GitHub Actions
+**Development:** Next.js, Node.js, Vercel, TypeScript
+**Design:** Figma
 
 ---
 
-## How I Work
+## Working Style
 
-**Automation First** — 반복되는 작업은 자동화 파이프라인으로 해결합니다.
-**Build Fast** — 완벽한 다음 달보다 작동하는 오늘을 선택합니다.
-**AI-Augmented** — 코드 생성, 콘텐츠 초안, 리드 스코어링에 AI를 활용합니다.
-
----
-
-아주대학교 — 미디어학과 학사
-
-GitHub: [github.com/dalgoms](https://github.com/dalgoms) · Email: seyoung67@timbel.net
+- Structure problems into executable plans and initial analysis before starting work
+- Use AI tools to accelerate research, framing, and early-stage operational planning
+- Prefer working prototypes and practical frameworks over decorative outputs
 
 ---
 
-문제를 발견하면 자동화하거나 작은 도구를 만들어 해결하는 것을 좋아합니다.
+Ajou University — B.A. in Media Studies
