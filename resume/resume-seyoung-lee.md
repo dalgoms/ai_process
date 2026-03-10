@@ -1,41 +1,153 @@
 # Seyoung Lee
 
-## Summary
+**AI Automation & Growth Systems Builder**
 
-AI automation architect building scalable business workflows from scratch.
-Designed and deployed end-to-end AI pipelines that connect Notion, GitHub Actions, GPT Codex, Make.com, and Vercel into a unified automation system.
-Non-traditional background with strong execution — from idea to production in days, not months.
+Growth marketer who designs and builds AI-powered business automation architectures.
+From lead capture to content production to notification systems — I turn entire business workflows into automated pipelines grounded in real marketing experience.
 
----
-
-## Core Strengths
-
-| Area | Detail |
-|------|--------|
-| AI Workflow Design | End-to-end automation pipelines (Notion → AI Agent → Deploy) |
-| No-Code / Low-Code | Make.com, Notion API, Vercel serverless, GitHub Actions |
-| Business Automation | CRM lead capture, follow-up reminders, AI content generation |
-| System Architecture | Multi-project orchestration, webhook security, error handling |
-| Documentation | Playbook-style knowledge base with reusable templates |
-| Rapid Prototyping | Idea to working system in hours using AI-assisted development |
+I build and operate end-to-end automation workflows connecting Notion, GitHub Actions, GPT Codex, Make.com, and Vercel.
 
 ---
 
-## Experience
+## Core Strength
+
+### Growth Marketing
+
+SEO, performance marketing, content marketing, conversion rate optimization
+
+### Product Marketing
+
+User journey design, landing page UX, service messaging strategy
+
+### AI Automation Architecture
+
+End-to-end pipeline design from Notion → AI Agent → Deploy
+
+### Business Automation
+
+CRM lead capture, follow-up reminders, AI-powered content generation
+
+### No-Code / Low-Code Systems
+
+Automation systems built on Make.com, Notion API, and GitHub Actions
+
+### Documentation
+
+Playbook-based knowledge systems with reusable operational templates
+
+---
+
+## Professional Experience
 
 ### timbel
 
-**Head of Marketing** (Growth Marketing & Product Strategy)
-Jul 2017 – Present
+**Marketing Team Lead** (Growth Marketing & Product Strategy)
+Jul 2017 — Present
 
-Led B2B/B2C marketing strategy for stenography services and voice recording market. Built lead generation funnels and drove revenue growth through performance marketing and content marketing.
+Led B2B/B2C marketing strategy for stenography services and the voice recording market.
+Drove lead acquisition and revenue growth through performance marketing and content marketing operations.
 
-- Built organic lead acquisition channels via SEO and content marketing for stenography services
-- Improved inquiry conversion rates through landing page UX and messaging optimization
-- Contributed to revenue growth through integrated performance and content marketing operations
-- Introduced AI-powered marketing automation (Cursor, GPT, Notion, Make) for content production, data collection, and lead management
+Built and continuously improved lead generation funnels through SEO strategy, content production, and landing page UX optimization.
 
-Expanded domain expertise from voice-data services to AI speech technology (STT) and data-driven automation.
+Beyond marketing execution, designed service experience and conversion structures from a Product Marketing perspective — considering product messaging and user journeys.
+
+Currently building marketing operations pipelines using AI tools (Cursor, GPT, Notion, Make) to automate data collection, content generation, and lead management.
+
+**Key Contributions**
+
+- Built lead acquisition channels through SEO and content strategy
+- Improved inquiry conversion rates via landing page and messaging optimization
+- Contributed to service revenue growth through performance marketing operations
+- Introduced AI-powered content generation and data collection automation
+
+Through marketing stenography services, developed deep understanding of voice-data service markets, which expanded into interest in AI speech technology (STT) and data-driven automation.
+
+---
+
+## Projects
+
+### AI Process Playbook
+
+**[github.com/dalgoms/ai_process](https://github.com/dalgoms/ai_process)**
+
+Automation Playbook Repository documenting AI-powered workflow automation and growth strategies.
+Built a central automation hub managing multiple projects through a single Notion Work Inbox.
+
+**Architecture**
+
+```
+Notion → GitHub Issue → GPT Codex → Pull Request → CI → Deploy
+```
+
+**Key Features**
+
+- Multi-project routing via `config/projects.json`
+- Make.com integration for automated lead capture
+- Telegram real-time pipeline notifications
+- Comprehensive automation architecture and operations playbook documentation
+
+### WebScout
+
+**[github.com/dalgoms/webscout-next](https://github.com/dalgoms/webscout-next)**
+
+AI-powered website structure analyzer built with Next.js.
+Enter a URL to automatically analyze site structure, SEO signals, and UX insights.
+
+**Features**
+
+- Sitemap structure analysis
+- SEO signal extraction
+- Automated UX insight generation
+- Vercel CI/CD auto-deployment
+- Contact form → Make.com lead capture automation
+
+### Business Automation System
+
+Built a business automation layer for marketing and sales operations.
+
+**Lead Capture**
+
+Website form → Make.com → Notion CRM → Telegram + Email notification
+
+**Follow-up Automation**
+
+Schedule-based lead status check → Auto-alert for uncontacted leads
+
+**Content Pipeline**
+
+Idea registration → AI draft generation → Human review → Publish
+
+**Multi-Channel Notification**
+
+Telegram / Email / Teams / Slack / KakaoTalk / SMS
+
+---
+
+## Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| AI / Automation | GPT-4o, Codex Actions, Make.com, GitHub Actions |
+| Frontend | Next.js, React, Tailwind CSS, TypeScript |
+| Backend | Vercel Serverless Functions, Next.js API Routes |
+| Data | Notion API, Notion MCP |
+| DevOps | Git, GitHub CLI, Vercel, CI/CD |
+| Messaging | Telegram Bot API, Gmail, KakaoTalk API |
+| Tools | Cursor IDE, VS Code, AnyDesk |
+
+---
+
+## How I Work
+
+**Automation First** — If a task repeats, I build a pipeline.
+
+**Documentation Driven** — Playbooks, not tribal knowledge.
+
+**Build Fast** — A working system today beats a perfect system next month.
+
+**AI-Augmented Workflows** — AI for code generation, content drafting, lead scoring.
+
+**Mobile Workflow** — Register tasks from phone, review results anywhere.
 
 ---
 
@@ -45,65 +157,7 @@ Ajou University — B.A. in Media Studies
 
 ---
 
-## Projects
-
-### AI Process Playbook
-**[github.com/dalgoms/ai_process](https://github.com/dalgoms/ai_process)**
-
-Central automation hub managing multiple projects through a single Notion Work Inbox.
-
-- Notion → GitHub Issue → GPT Codex → PR → CI → Deploy pipeline
-- Multi-project routing via `config/projects.json`
-- Make.com integration for lead capture and content automation
-- Telegram real-time notifications at every pipeline stage
-- Comprehensive documentation: architecture, workflows, troubleshooting
-
-### WebScout
-**[github.com/dalgoms/webscout-next](https://github.com/dalgoms/webscout-next)**
-
-AI-powered website structure analyzer built with Next.js.
-
-- Paste a URL, get site map, SEO signals, and UX insights
-- Deployed on Vercel with automated CI/CD
-- Contact form integrated with Make.com lead capture pipeline
-- Webhook endpoints with API key auth, rate limiting, CORS whitelist
-
-### Business Automation System
-
-Built a complete business automation layer:
-
-- **Lead Capture**: Website form → Make.com → Notion CRM → Telegram + Email
-- **Follow-up Reminders**: Daily schedule → overdue leads → team notification
-- **Content Pipeline**: Idea registration → AI draft generation → human review
-- **Multi-channel Notifications**: Telegram, Email, Teams, Slack, KakaoTalk, SMS
-
----
-
-## Technical Skills
-
-| Category | Technologies |
-|----------|-------------|
-| AI / Automation | OpenAI GPT-4o, Codex Action, Make.com, GitHub Actions |
-| Frontend | Next.js, React, Tailwind CSS, TypeScript |
-| Backend | Vercel Serverless Functions, Next.js API Routes |
-| Data | Notion API, Notion MCP |
-| DevOps | Git, GitHub CLI, Vercel, CI/CD pipelines |
-| Communication | Telegram Bot API, Gmail, KakaoTalk API |
-| Tools | Cursor IDE, AnyDesk, VS Code |
-
----
-
-## Approach
-
-1. **Automate first** — If a task repeats, build a pipeline
-2. **Document everything** — Playbooks, not tribal knowledge
-3. **Ship fast** — Working system today beats perfect system next month
-4. **AI-augmented** — Use AI for code generation, content drafting, lead scoring
-5. **Mobile-first workflow** — Register tasks from phone, review results anywhere
-
----
-
 ## Contact
 
 - GitHub: [github.com/dalgoms](https://github.com/dalgoms)
-- Email: seyoung@timbel.net
+- Email: seyoung67@timbel.net
