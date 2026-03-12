@@ -24,3 +24,12 @@
 | [서비스 구조 비교](docs/service-structure-analysis.md) | 사이트 구조, SEO, 콘텐츠 전략 비교 분석 |
 | [성장 기회 정의](docs/problem.md) | 각 플랫폼의 구조적 기회 |
 | [솔루션 방향](docs/solution.md) | Growth Marketing 관점 개선 방향 |
+
+## WebScout AI 진단 리포트
+
+[WebScout](https://github.com/dalgoms/webscout-next)으로 실제 크롤링 후 GPT-4o가 자동 생성한 진단 리포트입니다.
+
+| 리포트 | 크롤링 결과 | 핵심 진단 |
+|--------|------------|----------|
+| [닥터나우 AI 진단](doctornow-ai-diagnostic.md) | 31 pages (sitemap 기반) | SEO 콘텐츠 강점, 전환 경로 개선 필요 |
+| [나만의닥터 AI 진단](nmd-ai-diagnostic.md) | 19,934 pages (sitemap 기반) | 대규모 콘텐츠, 깊은 페이지 접근성 개선 필요 |
