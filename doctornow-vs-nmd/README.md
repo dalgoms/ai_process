@@ -23,8 +23,11 @@
 | 문서 | 내용 |
 |------|------|
 | [서비스 구조 비교](docs/service-structure-analysis.md) | 사이트 구조, SEO, 콘텐츠 전략 비교 분석 |
+| [시장 환경 조사](docs/competitive-landscape.md) | 시장 현황, 서비스 비교, 포지셔닝, SWOT |
 | [성장 기회 정의](docs/problem.md) | 각 플랫폼의 구조적 기회 |
 | [솔루션 방향](docs/solution.md) | Growth Marketing 관점 개선 방향 |
+| [Growth Marketing 방향](docs/growth-marketing-role.md) | 기여 영역, 적용 경험, 성과 목표 |
+| [성과 측정 프레임워크](docs/success-metrics.md) | KPI, 전환/리텐션 지표, 실패 기준 |
 
 ## WebScout AI 진단 리포트
 
