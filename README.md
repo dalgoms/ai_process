@@ -1,7 +1,11 @@
 # AI Process Playbook
 
-AI 기반 업무 자동화 파이프라인과 비즈니스 성장 전략을 정리한 플레이북입니다.
+**Growth Marketing OS — Automate** 파트를 담당하는 자동화 허브입니다.
 모바일에서 작업을 등록하면 AI가 코드를 작성하고, 리드를 수집하고, 콘텐츠를 생성합니다.
+
+```
+Analyze (WebScout) → Create (Ad Creative Tool) → ▶ Automate (ai_process) → Measure (UTM+GA)
+```
 
 ---
 
