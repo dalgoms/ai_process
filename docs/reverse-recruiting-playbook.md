@@ -36,7 +36,7 @@
 - 앱/웹 서비스가 있어 WebScout으로 분석 가능한 곳
 - 본인의 경험(퍼포먼스 마케팅, CRM, 모바일 UX)이 직접 기여할 수 있는 곳
 
-### Step 2: WebScout 크롤링
+### Step 2: WebScout 크롤링 + AI 진단
 
 ```
 https://webscout-next-8veo.vercel.app/
@@ -49,15 +49,23 @@ URL 입력 → 사이트 구조 분석 결과 확인:
 - 캠페인/UTM URL
 - 숨겨진 페이지
 
+**AI Diagnostic** 버튼 클릭 → GPT-4o가 크롤링 데이터를 기반으로 한국어 진단 리포트를 자동 생성:
+- 사이트 구조 진단, 유입/전환 분석
+- 성장 기회 Top 3
+- 실행 우선순위 테이블
+- Download .md로 저장 → Step 3의 초안으로 활용
+
 ### Step 3: 분석 작성
 
 `case-template/` 폴더를 복사하여 회사명으로 rename.
 
 **최소 작성 문서 (3개):**
 
+> AI Diagnostic 리포트를 초안으로 활용하면 작성 시간을 절반 이하로 줄일 수 있음
+
 | 문서 | 내용 | 소요 |
 |---|---|---|
-| `service-structure-analysis.md` | WebScout 크롤링 기반 구조 인사이트 | 1시간 |
+| `service-structure-analysis.md` | AI 진단 리포트 + 추가 인사이트 보강 | 30분 |
 | `problem.md` | 현 구조에서 보이는 성장 기회 | 30분 |
 | `solution.md` | 방향성 제안 + 수익 연결 | 30분 |
 
