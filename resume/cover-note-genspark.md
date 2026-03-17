@@ -2,17 +2,17 @@
 
 Hi,
 
-I'm excited about the Korea Marketing Lead opportunity at GenSpark. Here's why I believe I'm a strong fit:
+I saw the Korea Marketing Lead opening at GenSpark and wanted to reach out. Here's a bit about why I think this could be a good match:
 
-**I've lived through the AI transition, not just adopted it.** I joined timbel when it was a professional shorthand company and experienced its full transformation into an AI speech recognition platform. That journey gave me a practical understanding of how AI changes products, customers, and go-to-market — not from reading about it, but from executing through it. When generative AI arrived in 2022, I immediately applied it to ad creatives, landing pages, and campaign messaging, making our funnel execution measurably faster.
+**I didn't just adopt AI — I lived through the transition.** I joined timbel when it was a professional shorthand company. Over the next decade, the business shifted to AI-powered speech recognition, and I was in the middle of it — adjusting positioning, rethinking channels, rebuilding the website and lead flows as the product changed. When generative AI arrived in 2022, I started using it right away for ad creatives, landing pages, and campaign copy. It made a real difference in how fast we could test and iterate.
 
-**I build, and I deliver results.** I scaled timbel's lead pipeline 14x, grew revenue from ₩5.2B to ₩7.2B on ₩800M–1.5B annual budgets across Naver, Kakao, Meta, and Google, and launched Timblo (B2B SaaS) to 250+ enterprise clients including SK hynix and SK Telecom. I also built production AI tools — WebScout and Ad Creative Tool — that I use in my daily work.
+**The numbers back it up.** Revenue grew from ₩5.2B to ₩7.2B, inbound leads scaled 14x, and I took our B2B SaaS (Timblo) from launch to 250+ enterprise clients including SK hynix and SK Telecom. I also built two AI-powered tools — WebScout and Ad Creative Tool — that I still use day to day.
 
-**I understand the Korean market deeply.** From Naver SEO mechanics to KakaoTalk ad formats to enterprise procurement processes (GS certification, pilot-to-contract cycles), I've operated across all the channels GenSpark would need to win in Korea.
+**I know the Korean market well.** Naver SEO, KakaoTalk ads, enterprise procurement (GS certification, pilot-to-contract flows) — I've run campaigns and closed deals across all of these channels for years.
 
-**I ship fast.** I've built and deployed Next.js apps, automated CRM workflows, and AI-powered tools — the same builder mindset GenSpark values.
+**I move quickly.** I'm used to doing the work myself when needed — building sites, wiring up automation, writing copy — not just directing others.
 
-I'd welcome the chance to discuss how I can help GenSpark establish a strong presence in the Korean market.
+Happy to chat about how I could help GenSpark get traction in Korea.
 
 Best,
 Seyoung Lee

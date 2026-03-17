@@ -78,11 +78,11 @@ I've actually tried GenSpark, and I think the product has real potential in Kore
 
 **English:**
 
-That's a fair question. The reason is that my role kept evolving. I started as a marketer, but I ended up building the entire marketing infrastructure — websites, automation systems, AI tools, even a SaaS product. Every couple of years, my scope expanded significantly. In a way, I've had three or four different jobs within one company. But I'm at a point now where I want to apply everything I've built to a global AI product, and that's why GenSpark excites me.
+Honestly, it never felt like one job. timbel has five or six different product lines — speech-to-text solutions, media captioning, video editing, translation — and I ran marketing for all of them. Each one has its own customers, channels, and messaging, so it was more like being the marketing lead at five startups under one roof. On top of that, the company itself went through a major shift from traditional shorthand to AI-powered speech recognition, so the product, the market, and my role all kept changing. I'm at a point now where I want to take everything I've learned and apply it to a global AI product, which is what drew me to GenSpark.
 
 **한국어:**
 
-> 역할이 계속 바뀌었기 때문입니다. 처음에는 마케터로 시작했는데, 지금은 웹사이트를 직접 만들고, 자동화 시스템을 구축하고, AI 도구를 개발해서 운영하고 있습니다. 한 회사에서 3-4번 직종이 바뀐 셈이에요. 이제는 이걸 글로벌 AI 제품에 적용해보고 싶어서 GenSpark에 관심을 갖게 됐습니다.
+> 사실 한 가지 일을 10년 한 게 아닙니다. 회사 안에 솔루션, 미디어자막, 영상편집, 번역 등 5-6개 사업부가 있었고, 각각의 마케팅을 제가 총괄했습니다. 고객도 다르고, 채널도 다르고, 메시지도 달라서 하나의 지붕 아래에서 5개 스타트업의 마케팅 리드를 한 것과 비슷합니다. 게다가 회사 자체도 속기 전문에서 AI 음성인식으로 완전히 바뀌었기 때문에, 제품도 시장도 역할도 계속 바뀌었습니다. 이제는 이 경험을 글로벌 AI 제품에 적용해보고 싶어서 GenSpark에 관심을 갖게 됐습니다.
 
 ---
 
@@ -170,6 +170,25 @@ Days 60-90: launch the first paid campaigns on Naver and Meta, start measuring, 
 
 3. **"How does the marketing team collaborate with product and engineering?"**
    → 자신이 builder라서 협업 구조가 중요하다는 뉘앙스
+
+---
+
+### Q11. "I see a gap in your career. Can you tell me about that?" / "경력 공백이 있는데요?"
+
+**짧고 담백하게. 길게 설명하면 오히려 이상해집니다.**
+
+**English:**
+
+Yes, I took about a year off between roles. After several intense years I wanted to step back, recharge, and think about what I wanted to do next. I came back with a much clearer sense of direction — that's actually when I started getting more serious about building tools and automation, which turned into the projects you see on my resume.
+
+**한국어:**
+
+> 네, 중간에 1년 정도 쉬었습니다. 몇 년간 강도 높게 일한 후에 한 번 정리하고 다음 방향을 잡고 싶었습니다. 돌아와서 오히려 방향이 명확해졌고, 그때부터 도구 개발이나 자동화 쪽으로 본격적으로 파고들기 시작했습니다.
+
+**포인트:**
+- 변명하지 않기 — career break은 글로벌에서 흔한 일
+- 공백 이후 더 발전했다는 뉘앙스로 마무리
+- 30초 이내로 끝내기 — 길어지면 오히려 의심받음
 
 ---
 

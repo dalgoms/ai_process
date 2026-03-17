@@ -4,7 +4,7 @@
 
 Hi [Name],
 
-Thanks for reaching out about the Korea Marketing Lead role. I've spent the last 10 years in AI product companies — building marketing systems, shipping production tools with GPT-4o, and running ₩1.5B+ budgets across Korean channels (Naver, Kakao, Meta, Google). I'd love to discuss how I can help GenSpark grow in the Korean market.
+Thanks for reaching out. I've been at an AI voice company for the past 10 years — started when it was a shorthand business and stayed through the full pivot to speech recognition. Most of my work has been hands-on: running ₩1.5B+ budgets across Korean ad channels, building websites and lead systems, and more recently shipping AI tools I use in production. Would be great to talk about what the Korea Marketing Lead role looks like.
 
 Attached: resume (PDF) + [GitHub](https://github.com/dalgoms)
 
@@ -12,6 +12,6 @@ Attached: resume (PDF) + [GitHub](https://github.com/dalgoms)
 
 안녕하세요, [이름]님.
 
-Korea Marketing Lead 포지션 제안 감사합니다. 저는 지난 10년간 AI 제품 회사에서 마케팅 시스템을 직접 기획·빌드·운영해왔고, GPT-4o 기반 프로덕션 툴도 직접 만들어 운영 중입니다. 네이버·카카오·Meta·Google 등 한국 시장 채널에서 연 15억 이상의 예산을 집행하며 리드를 14배 성장시킨 경험이 있습니다. GenSpark의 한국 시장 성장에 어떻게 기여할 수 있을지 이야기 나누고 싶습니다.
+연락 주셔서 감사합니다. 저는 속기 전문 회사에서 시작해 AI 음성인식으로 전환하는 과정을 10년간 함께한 마케터입니다. 네이버·카카오·Meta·Google에서 연 15억 이상의 예산을 직접 운영했고, 웹사이트와 리드 시스템도 직접 만들어서 돌리고 있습니다. Korea Marketing Lead 역할에 대해 이야기 나눌 수 있으면 좋겠습니다.
 
 첨부: 이력서 (PDF) + [GitHub](https://github.com/dalgoms)
