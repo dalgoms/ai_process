@@ -163,7 +163,7 @@ app/analyze/page.tsx에서 "분석 시작" 버튼의 텍스트를 "Start Analysi
 | [Notion Work Inbox](https://www.notion.so/7f471e8dcba44e878b96cfae8d0de083) | 작업 등록 (모든 프로젝트 통합) |
 | [webscout-next](https://github.com/dalgoms/webscout-next) | Next.js 서비스 |
 | [ai_process](https://github.com/dalgoms/ai_process) | 중앙 오케스트레이터 + 플레이북 |
-| [Vercel](https://webscout-next-8veo.vercel.app) | 배포 |
+| [Vercel](https://webscout-next.vercel.app) | 배포 |
 | Telegram (@seyounginboxbot) | 알림 |
 | Make.com | 비즈니스 자동화 (리드, 콘텐츠, 팔로업) |
 

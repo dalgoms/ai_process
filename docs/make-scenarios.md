@@ -272,7 +272,7 @@ Telegram 모듈 뒤에 `+` → **Gmail** → **Send an Email** 선택
 
 ```
 WEBHOOK_API_KEY=your-secret-key-here
-ALLOWED_ORIGINS=https://webscout-next-8veo.vercel.app,https://timbel.com
+ALLOWED_ORIGINS=https://webscout-next.vercel.app,https://timbel.com
 ```
 
 ### API Key 포함 호출

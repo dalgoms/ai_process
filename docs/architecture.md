@@ -179,7 +179,7 @@
 5. DEPLOY
    Vercel → Production
    ┌──────────────────────────────────────────────────┐
-   │ https://webscout-next-8veo.vercel.app            │
+   │ https://webscout-next.vercel.app            │
    └──────────────────────────────────────────────────┘
 ```
 

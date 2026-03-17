@@ -39,7 +39,7 @@
 ### Step 2: WebScout 크롤링 + AI 진단
 
 ```
-https://webscout-next-8veo.vercel.app/
+https://webscout-next.vercel.app/
 ```
 
 URL 입력 → 사이트 구조 분석 결과 확인:

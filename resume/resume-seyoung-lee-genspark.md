@@ -59,7 +59,7 @@ What sets me apart: I build my own tools. I designed and shipped AI-powered mark
 - Built automated lead distribution system enabling autonomous department-level operations
 
 **AI Marketing Tools (Designed & Built)**
-- **WebScout** — Competitive intelligence automation: auto-crawling + GPT-4o diagnostic reports, reducing analysis from days to hours — [live](https://webscout-next-8veo.vercel.app) · [github](https://github.com/dalgoms/webscout-next)
+- **WebScout** — Competitive intelligence automation: auto-crawling + GPT-4o diagnostic reports, reducing analysis from days to hours — [live](https://webscout-next.vercel.app) · [github](https://github.com/dalgoms/webscout-next)
 - **Ad Creative Tool** — AI copy generation + template rendering + multi-size automation — [live](https://ad-creative-tool.vercel.app) · [github](https://github.com/dalgoms/ad-creative-tool)
 - **Alert Automation** — Fully automated competitor/keyword monitoring with real-time Telegram/Slack alerting
 

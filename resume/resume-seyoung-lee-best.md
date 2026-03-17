@@ -45,7 +45,7 @@ Led the full scope of marketing strategy, execution, website operations, and aut
 - Stabilized B2C acquisition infrastructure by 2025 and established the operational foundation for B2B expansion
 
 **AI Marketing Tools — Designed & Built (2026~)**
-- **WebScout** — Competitive intelligence automation: auto-crawling + GPT-4o AI diagnostic reports, days → hours — [live](https://webscout-next-8veo.vercel.app) · [github](https://github.com/dalgoms/webscout-next)
+- **WebScout** — Competitive intelligence automation: auto-crawling + GPT-4o AI diagnostic reports, days → hours — [live](https://webscout-next.vercel.app) · [github](https://github.com/dalgoms/webscout-next)
 - **Ad Creative Tool** — AI copy generation + template rendering + multi-size automation, hours → minutes — [live](https://ad-creative-tool.vercel.app) · [github](https://github.com/dalgoms/ad-creative-tool)
 - **Business Automation System** — End-to-end lead capture → CRM → alerting → follow-up, real-time initial response
 - **Automation Process Playbook** — Notion → GitHub Issue → PR → CI → Deploy automation and reusable playbooks — [github](https://github.com/dalgoms/ai_process)
