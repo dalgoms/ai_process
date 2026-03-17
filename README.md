@@ -1,7 +1,25 @@
 # AI Process Playbook
 
-AI 기반 업무 자동화 파이프라인과 비즈니스 성장 전략을 정리한 플레이북입니다.
+**Growth Marketing OS — Automate** 파트를 담당하는 자동화 허브입니다.
 모바일에서 작업을 등록하면 AI가 코드를 작성하고, 리드를 수집하고, 콘텐츠를 생성합니다.
+
+```
+Analyze (WebScout) → Create (Ad Creative Tool) → ▶ Automate (ai_process) → Measure (UTM+GA)
+```
+
+---
+
+## Service Diagnostics
+
+서비스 구조를 직접 크롤링·분석하고, 성장 기회와 솔루션 방향을 정리합니다.
+[WebScout](https://github.com/dalgoms/webscout-next)으로 사이트를 크롤링하고, GPT-4o 기반 **AI 진단 리포트**를 생성한 뒤, 구조 분석 → 기회 도출 → 솔루션 설계까지 정리한 케이스들입니다.
+
+| Case | 대상 | 분석 테마 | 상태 |
+|------|------|----------|------|
+| *(다음 케이스)* | | | |
+
+> 새 케이스 시작 시 [`case-template/`](case-template/)를 복사하여 사용합니다.
+> 프로세스 가이드: [역방향 리크루팅 플레이북](docs/reverse-recruiting-playbook.md)
 
 ---
 
@@ -41,13 +59,6 @@ Mermaid 기반 아키텍처 다이어그램.
 | [Healthcare Automation Architecture](diagrams/healthcare-automation-architecture.md) | 헬스케어 자동화 전체 구조도 |
 | [Healthcare Growth Loop](diagrams/healthcare-growth-loop.md) | AARRR 기반 성장 루프 |
 | [AI Process Architecture](diagrams/ai-process-architecture.md) | 범용 AI 프로세스 아키텍처 |
-
-## Resume
-
-| 문서 | 내용 |
-|------|------|
-| [Seyoung Lee (EN)](resume/resume-seyoung-lee.md) | AI Automation Architect |
-| [이세영 (KO)](resume/resume-seyoung-lee-ko.md) | Growth Marketing & AI Automation |
 
 ---
 
